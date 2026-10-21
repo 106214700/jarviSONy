@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Lumina Learn logo">
+  <rect width="48" height="48" rx="10" fill="#2a2878"/>
+  <path d="M8 30 L24 36 L40 30 L40 33 L24 39 L8 33 Z" fill="#ffffff"/>
+  <path d="M10 26 Q17 23 24 27 Q31 23 38 26 L38 31 Q31 28 24 32 Q17 28 10 31 Z" fill="#ffe6ad"/>
+  <circle cx="24" cy="14" r="6" fill="#f2b134"/>
+  <path d="M24 5 V2 M14 9 L12 7 M34 9 L36 7 M10 15 H7 M38 15 H41" stroke="#f2b134" stroke-width="2" stroke-linecap="round"/>
+</svg>
