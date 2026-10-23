@@ -505,6 +505,202 @@ a[target="_blank"]::after { content: " \2197"; }
    SECTION 10 - PAGE: ABOUT (owner: Quan) - intentionally left for the other team member
    ========================================================================== */
 
+.page-about {
+  --color-ink: #4f2634;
+  --color-ink-soft: #765461;
+  --color-bg: #fff8fa;
+  --color-surface: #fff0f5;
+  --color-primary: #fc809f;
+  --color-primary-dark: #751d3a;
+  --color-teal: #751d3a;
+  --color-accent: #fc809f;
+  --color-accent-soft: #ffc9d7;
+  --color-border: #ffc9d7;
+  --color-error: #b3261e;
+  --color-focus: #751d3a;
+  --color-hero-start: #ffe9ef;
+  --color-hero-end: #ffe9ef;
+  --color-hero-dot: #ffc9d7;
+  --color-stripe: #fff0f5;
+  --color-hover: #ffe9ef;
+}
+
+.page-about main {
+  padding: var(--space-5) 0;
+}
+
+.page-about h2 {
+  color: var(--color-primary-dark);
+  padding-bottom: var(--space-2);
+  border-bottom: 3px solid var(--color-accent);
+}
+
+/* 2. nested list about group*/
+.page-about .about-group {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius);
+}
+
+.page-about .about-group ul {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.page-about .about-group ul ul {
+  margin-top: var(--space-1);
+}
+
+.page-about .about-group li::marker {
+  color: var(--color-primary);
+}
+
+/* 3. member list */
+.page-about .about-members {
+  margin: var(--space-3) 0;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius);
+}
+
+.page-about .about-members dt {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.page-about .about-members dt:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* BADGE ID: inline-block, rounded, monospace font, red on pink background, with "ID" prefix */
+.page-about .about-id {
+  display: inline-block;
+  margin-left: var(--space-2);
+  padding: 0.15rem 0.65rem;
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: #751d3a;
+  background-color: #ffe9ef;
+  border: 1px solid #fc809f;
+  border-radius: 999px;
+}
+
+.page-about .about-id::before {
+  content: "ID ";
+}
+
+.page-about .about-members dd {
+  margin: var(--space-2) 0 0 0;
+}
+
+/* quote citation */
+.page-about .about-members blockquote {
+  margin: var(--space-2) 0;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-teal);
+  border-radius: var(--radius);
+}
+
+.page-about .about-members blockquote p {
+  margin: 0;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.page-about .about-quote-en {
+  margin: var(--space-1) 0 0 0;
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
+.page-about .about-quote-en cite {
+  font-style: italic;
+}
+
+/* 4. group photo */
+.page-about .about-figure {
+  margin: var(--space-3) 0;
+  padding: var(--space-3);
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  max-width: 48rem;
+}
+
+.page-about .about-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid #751d3a;
+  border-radius: var(--radius);
+}
+
+.page-about .about-figure figcaption {
+  margin-top: var(--space-2);
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+}
+
+/* 5. fun fact table */
+.page-about .about-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff8fa;
+}
+
+.page-about .about-table caption {
+  padding-bottom: var(--space-2);
+  font-weight: 700;
+  text-align: left;
+  color: #751d3a;
+}
+
+.page-about .about-table th,
+.page-about .about-table td {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid #ffc9d7;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* hàng tiêu đề màu đỏ rượu #751d3a giống hiring timeline */
+.page-about .about-table thead th {
+  background-color: #751d3a;
+  color: #fff8fa;
+}
+
+/* cột tiêu đề tên members */
+.page-about .about-table tbody th {
+  background-color: #fff0f5;
+  color: #751d3a;
+  font-weight: 700;
+}
+
+/* dòng sọc kẽ */
+.page-about .about-table tbody tr:nth-child(even) td {
+  background-color: #fff0f5;
+}
+
+/* effect hover) */
+.page-about .about-table tbody tr:hover th,
+.page-about .about-table tbody tr:hover td {
+  background-color: #ffe9ef;
+}
+
 /* ==========================================================================
    SECTION 11 - RESPONSIVE MEDIA QUERIES (Sprint 2)
    EMPTY IN SPRINT 1 ON PURPOSE
