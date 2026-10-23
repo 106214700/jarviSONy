@@ -8,24 +8,29 @@
    SECTION 0 - TOKENS (colors, spacing, type scale)
    ========================================================================== */
 :root {
-  /* Colours (use variables only) */
-  --color-ink: #1B1F3B;
-  --color-ink-soft: #4A4F73;
-  --color-bg: #FFFFFF;
-  --color-surface: #F4F6FB;
-  --color-primary: #3D3BA6;
-  --color-primary-dark: #2A2878;
-  --color-teal: #0E7C7B;
-  --color-accent: #F2B134;
-  --color-accent-soft: #FFE6AD;
-  --color-border: #C9CFE3;
-  --color-error: #B3261E;
-  --color-focus: #B45309;
-  --color-hero-start: #EEF0FF;
-  --color-hero-end: #FFF6DF;
-  --color-hero-dot: #D5D8F2;
-  --color-stripe: #EEF1FA;
-  --color-hover: #FFF1CC;
+  /* Colours (unified Piggy Pink & Burgundy palette) */
+  --color-ink: #4f2634;
+  --color-ink-soft: #765461;
+  --color-bg: #fff8fa;
+  --color-surface: #fff0f5;
+  --color-primary: #fc809f;
+  --color-primary-dark: #751d3a;
+  --color-teal: #751d3a;
+  --color-accent: #fc809f;
+  --color-accent-soft: #ffc9d7;
+  --color-border: #ffc9d7;
+  --color-error: #b3261e;
+  --color-error-bg: #fdecea;
+  --color-success: #1b6e3c;
+  --color-focus: #751d3a;
+  --color-hero-start: #ffe9ef;
+  --color-hero-end: #ffe9ef;
+  --color-hero-dot: #ffc9d7;
+  --color-stripe: #fff0f5;
+  --color-hover: #ffe9ef;
+
+  /* Font stacks */
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
 
   /* Spacing scale */
   --space-1: 0.25rem;
@@ -72,10 +77,15 @@ body {
 
 /* Visually hidden for accessible labels */
 .visually-hidden {
-  position: absolute !important;
-  height: 1px; width: 1px; overflow: hidden;
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap; border: 0; padding: 0; margin: -1px;
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+  margin: -1px;
 }
 
 /* ==========================================================================
@@ -101,25 +111,25 @@ a[target="_blank"]::after { content: " \2197"; }
    SECTION 4 - HEADER AND NAV (shared, owned by Vinh)
    ========================================================================== */
 .site-header { background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
-.site-header__inner { display:flex; align-items:center; gap: var(--space-3); padding: var(--space-3) 0; }
-.site-logo { display:flex; align-items:center; gap: .5rem; text-decoration: none; color: inherit; }
-.site-logo__name { font-weight:700; }
+.site-header__inner { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0; }
+.site-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: inherit; }
+.site-logo__name { font-weight: 700; }
 
-.site-nav__list { list-style: none; display:flex; gap: var(--space-3); margin:0; padding:0; }
-.site-nav__list a { color: var(--color-primary-dark); padding-bottom: .25rem; }
+.site-nav__list { list-style: none; display: flex; gap: var(--space-3); margin: 0; padding: 0; }
+.site-nav__list a { color: var(--color-primary-dark); padding-bottom: 0.25rem; }
 .site-nav__list a[aria-current="page"] { border-bottom: 3px solid var(--color-accent-soft); }
 
 /* Skip link: visible on focus for keyboard users */
 .skip-link {
   position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
 }
-.skip-link:focus { position: static; left: 0; width: auto; height: auto; background: var(--color-primary-dark); color: var(--color-bg); padding: .5rem; z-index: 1000; }
+.skip-link:focus { position: static; left: 0; width: auto; height: auto; background: var(--color-primary-dark); color: var(--color-bg); padding: 0.5rem; z-index: 1000; }
 
 /* ==========================================================================
    SECTION 5 - FOOTER (shared)
    ========================================================================== */
 .site-footer { background: var(--color-surface); border-top: 1px solid var(--color-border); padding: var(--space-4) 0; color: var(--color-primary-dark); }
-.site-footer__links { list-style:none; padding:0; display:flex; gap: var(--space-3); margin:0 0 var(--space-2) 0; }
+.site-footer__links { list-style: none; padding: 0; display: flex; gap: var(--space-3); margin: 0 0 var(--space-2) 0; }
 .site-footer__respect { margin: 0 0 var(--space-2) 0; color: var(--color-ink-soft); }
 .site-footer__copy { font-size: var(--text-sm); color: var(--color-ink-soft); }
 
@@ -129,15 +139,15 @@ a[target="_blank"]::after { content: " \2197"; }
 .btn {
   background: var(--color-primary);
   color: var(--color-bg);
-  border: none; padding: .5rem .75rem; border-radius: .375rem; cursor: pointer;
+  border: none; padding: 0.5rem 0.75rem; border-radius: 0.375rem; cursor: pointer;
 }
 
-.data-table { width:100%; border-collapse: collapse; }
-.data-table caption { padding-bottom: var(--space-2); font-weight: 700; text-align:left; color: var(--color-primary-dark); }
-.data-table th, .data-table td { padding: var(--space-2) var(--space-3); border: 1px solid var(--color-border); text-align:left; vertical-align:top; }
+.data-table { width: 100%; border-collapse: collapse; }
+.data-table caption { padding-bottom: var(--space-2); font-weight: 700; text-align: left; color: var(--color-primary-dark); }
+.data-table th, .data-table td { padding: var(--space-2) var(--space-3); border: 1px solid var(--color-border); text-align: left; vertical-align: top; }
 .data-table thead th { background-color: var(--color-primary-dark); color: var(--color-bg); }
 
-.table-scroll { overflow:auto; }
+.table-scroll { overflow: auto; }
 
 /* External links get visible arrow as well as text "opens in a new tab" */
 a[target="_blank"]::after { content: " \2197"; }
@@ -146,8 +156,10 @@ a[target="_blank"]::after { content: " \2197"; }
    SECTION 7 - PAGE: HOME (owner: Vinh)
    ========================================================================== */
 /* The selectors for page-specific rules begin with .page-home to prevent cross-page leaks. */
-.page-home .home-hero { padding: var(--space-5) 0; background: linear-gradient(90deg, var(--color-hero-start), var(--color-hero-end));
-  /* A subtle dot pattern using repeating-radial-gradient to meet the CSS-only background requirement */
+.page-home .home-hero {
+  padding: var(--space-5) 0;
+  background: linear-gradient(90deg, var(--color-hero-start), var(--color-hero-end));
+  /* A subtle dot pattern using radial-gradient to meet the CSS-only background requirement */
   background-image: radial-gradient(circle at 10% 20%, var(--color-hero-dot) 1px, transparent 1px), linear-gradient(90deg, var(--color-hero-start), var(--color-hero-end));
 }
 .page-home .home-hero__inner { display: grid; grid-template-columns: 1fr 320px; gap: var(--space-4); align-items: center; }
@@ -155,8 +167,8 @@ a[target="_blank"]::after { content: " \2197"; }
 .page-home .home-hero__desc { color: var(--color-ink-soft); max-width: 60ch; }
 .page-home .home-hero__image img { width: 100%; height: auto; display: block; border-radius: var(--radius); }
 
-.page-home .home-search { display:flex; gap: .5rem; align-items:center; margin-top: var(--space-3); }
-.page-home .home-search input[type="search"] { padding: .5rem; border:1px solid var(--color-border); border-radius: .25rem; }
+.page-home .home-search { display: flex; gap: 0.5rem; align-items: center; margin-top: var(--space-3); }
+.page-home .home-search input[type="search"] { padding: 0.5rem; border: 1px solid var(--color-border); border-radius: 0.25rem; }
 .page-home .home-search .home-search__note { margin: 0; color: var(--color-ink-soft); font-size: var(--text-sm); }
 
 .page-home .home-commitment { background: var(--color-surface); padding: var(--space-3); border-left: 4px solid var(--color-teal); margin-top: var(--space-4); }
@@ -168,7 +180,8 @@ a[target="_blank"]::after { content: " \2197"; }
 
 .page-jobs,
 .page-home,
-.page-apply {
+.page-apply,
+.page-about {
   --color-ink: #4f2634;
   --color-ink-soft: #765461;
   --color-bg: #fff8fa;
@@ -180,6 +193,8 @@ a[target="_blank"]::after { content: " \2197"; }
   --color-accent-soft: #ffc9d7;
   --color-border: #ffc9d7;
   --color-error: #b3261e;
+  --color-error-bg: #fdecea;
+  --color-success: #1b6e3c;
   --color-focus: #751d3a;
   --color-hero-start: #ffe9ef;
   --color-hero-end: #ffe9ef;
@@ -502,7 +517,10 @@ a[target="_blank"]::after { content: " \2197"; }
 }
 
 /* ==========================================================================
-   SECTION 10 - PAGE: ABOUT (owner: Quan) - intentionally left for the other team member
+   SECTION 10 - PAGE: ABOUT (owner: Quan)
+   Selector focus: adjacent sibling (+), general sibling (~), attribute
+   selector ([lang="vi"]), pseudo-element (::before), and pseudo-classes
+   (:nth-child(even), :hover).
    ========================================================================== */
 
 .page-about {
@@ -517,6 +535,8 @@ a[target="_blank"]::after { content: " \2197"; }
   --color-accent-soft: #ffc9d7;
   --color-border: #ffc9d7;
   --color-error: #b3261e;
+  --color-error-bg: #fdecea;
+  --color-success: #1b6e3c;
   --color-focus: #751d3a;
   --color-hero-start: #ffe9ef;
   --color-hero-end: #ffe9ef;
@@ -535,7 +555,7 @@ a[target="_blank"]::after { content: " \2197"; }
   border-bottom: 3px solid var(--color-accent);
 }
 
-/* 2. nested list about group*/
+/* 1. Nested list about group (R30) */
 .page-about .about-group {
   padding: var(--space-3) var(--space-4);
   background: var(--color-surface);
@@ -557,7 +577,7 @@ a[target="_blank"]::after { content: " \2197"; }
   color: var(--color-primary);
 }
 
-/* 3. member list */
+/* 2. Member definition list & student ID badges (R31, R32, R35) */
 .page-about .about-members {
   margin: var(--space-3) 0;
   padding: var(--space-4);
@@ -582,12 +602,12 @@ a[target="_blank"]::after { content: " \2197"; }
   border-top: none;
 }
 
-/* BADGE ID: inline-block, rounded, monospace font, red on pink background, with "ID" prefix */
+/* Styled student ID badge with literal hex colours and ::before prefix (R35) */
 .page-about .about-id {
   display: inline-block;
   margin-left: var(--space-2);
   padding: 0.15rem 0.65rem;
-  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-family: var(--font-mono);
   font-size: var(--text-sm);
   font-weight: 700;
   color: #751d3a;
@@ -604,7 +624,17 @@ a[target="_blank"]::after { content: " \2197"; }
   margin: var(--space-2) 0 0 0;
 }
 
-/* quote citation */
+/* Adjacent sibling combinator: first <dd> right after <dt> */
+.page-about .about-members dt + dd {
+  margin-top: var(--space-1);
+}
+
+/* General sibling combinator: subsequent <dd> elements */
+.page-about .about-members dd ~ dd {
+  margin-top: var(--space-2);
+}
+
+/* Quote citation block & attribute selector [lang="vi"] */
 .page-about .about-members blockquote {
   margin: var(--space-2) 0;
   padding: var(--space-2) var(--space-3);
@@ -614,11 +644,15 @@ a[target="_blank"]::after { content: " \2197"; }
   border-radius: var(--radius);
 }
 
+.page-about .about-members blockquote[lang="vi"] {
+  font-style: italic;
+}
+
 .page-about .about-members blockquote p {
   margin: 0;
   font-style: italic;
   font-weight: 600;
-  color: var(--color-ink);
+  color: #4f2634;
 }
 
 .page-about .about-quote-en {
@@ -631,12 +665,12 @@ a[target="_blank"]::after { content: " \2197"; }
   font-style: italic;
 }
 
-/* 4. group photo */
+/* 3. Group photo figure & border (R33, R36) */
 .page-about .about-figure {
   margin: var(--space-3) 0;
   padding: var(--space-3);
-  background-color: var(--color-surface);
-  border: 2px solid var(--color-border);
+  background-color: #fff0f5;
+  border: 2px solid #ffc9d7;
   border-radius: var(--radius);
   max-width: 48rem;
 }
@@ -655,7 +689,7 @@ a[target="_blank"]::after { content: " \2197"; }
   font-size: var(--text-sm);
 }
 
-/* 5. fun fact table */
+/* 4. Fun facts table with literal hex colours, zebra striping & hover (R34, R37) */
 .page-about .about-table {
   width: 100%;
   border-collapse: collapse;
@@ -677,27 +711,23 @@ a[target="_blank"]::after { content: " \2197"; }
   vertical-align: top;
 }
 
-/* hàng tiêu đề màu đỏ rượu #751d3a giống hiring timeline */
 .page-about .about-table thead th {
   background-color: #751d3a;
   color: #fff8fa;
 }
 
-/* cột tiêu đề tên members */
 .page-about .about-table tbody th {
   background-color: #fff0f5;
   color: #751d3a;
   font-weight: 700;
 }
 
-/* dòng sọc kẽ */
 .page-about .about-table tbody tr:nth-child(even) td {
   background-color: #fff0f5;
 }
 
-/* effect hover) */
-.page-about .about-table tbody tr:hover th,
-.page-about .about-table tbody tr:hover td {
+.page-about .about-table tbody tr:hover td,
+.page-about .about-table tbody tr:hover th {
   background-color: #ffe9ef;
 }
 
@@ -713,7 +743,7 @@ a[target="_blank"]::after { content: " \2197"; }
   * { scroll-behavior: auto; transition: none; animation: none; }
 }
 @media print {
-  .site-nav, .skip-link, .home-search { display:none; }
+  .site-nav, .skip-link, .home-search { display: none; }
   body { color: #000; background: #fff; }
   a[href^="http"]::after { content: " (" attr(href) ")"; }
 }

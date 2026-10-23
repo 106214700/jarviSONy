@@ -2,138 +2,132 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home | Lumina Learn</title>
-    <meta name="description"
-        content="Lumina Learn builds digital learning tools and online platforms for schools, universities and workplaces.">
-    <meta name="keywords" content="Lumina Learn, EdTech, accessible education, careers, web developer jobs">
-    <meta name="author" content="jarviSONy: Bui The Vinh, Nguyen Khoa Nguyen, Pham Tran Quoc Dung, Bui Minh Quan">
-    <link rel="stylesheet" href="styles.css">
-    <!-- EMBEDDED CSS SLOT: a small, purposeful example that overrides a single rule for this page. -->
-    <style>
-        /* Embedded example: slightly larger slogan on Home for emphasis. */
-        .page-home .home-hero__slogan {
-            font-size: var(--text-lg);
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Pedapigogy Learn</title>
+  <meta name="description" content="Pedapigogy Learn builds digital learning tools and online platforms for schools, universities and workplaces.">
+  <meta name="keywords" content="Pedapigogy Learn, EdTech, accessible education, careers, web developer jobs">
+  <meta name="author" content="jarviSONy: Bui The Vinh, Nguyen Khoa Nguyen, Pham Tran Quoc Dung, Bui Minh Quan">
+  <link rel="stylesheet" href="styles.css">
+  <!-- EMBEDDED CSS SLOT: a small, purposeful example that overrides a single rule for this page. -->
+  <style>
+    /* Embedded example: slightly larger slogan on Home for emphasis. */
+    .page-home .home-hero__slogan {
+      font-size: var(--text-lg);
+    }
+  </style>
 </head>
 
 <body class="page-home">
-    <!-- Skip link: first interactive element to improve keyboard accessibility -->
-    <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Skip link: first interactive element to improve keyboard accessibility -->
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- Shared header and navigation: paste verbatim from the team contract. -->
-    <header class="site-header">
-        <div class="container site-header__inner">
-            <a class="site-logo" href="index.html">
-                <img src="images/logo.svg" alt="Lumina Learn logo: a lit lamp shaped like an open book" width="48"
-                    height="48">
-                <span class="site-logo__name">Lumina Learn</span>
-            </a>
-            <nav class="site-nav" aria-label="Main navigation">
-                <ul class="site-nav__list">
-                    <li><a href="index.html" aria-current="page">Home</a></li>
-                    <li><a href="jobs.html">Jobs</a></li>
-                    <li><a href="apply.html">Apply</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </nav>
+  <!-- Shared header and navigation: paste verbatim from the team contract. -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-logo" href="index.html">
+        <img src="images/logo.svg" alt="Pedapigogy Learn logo: a lit lamp shaped like an open book" width="48" height="48">
+        <span class="site-logo__name">Pedapigogy Learn</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul class="site-nav__list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="apply.html">Apply</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero section: contains company name (h1), slogan and hero illustration. Semantic use: h1 is page title, sections group related content. -->
+    <section class="home-hero home-section" aria-label="Welcome">
+      <div class="container home-hero__inner">
+        <div>
+          <!-- h1 must be unique on the page. Use company name for the main heading. -->
+          <h1>Pedapigogy Learn</h1>
+          <p class="home-hero__slogan">Learning that leaves no one behind.</p>
+          <p class="home-hero__desc">Pedapigogy Learn builds digital learning tools and online platforms for
+            schools, universities and workplaces. Every product is designed to be accessible and inclusive
+            from the first sketch.</p>
+
+          <!-- Search form: role=search, GET to jobs.html as per the brief. The note is intentionally honest that search is non-functional on static site. -->
+          <form class="home-search" role="search" action="jobs.html" method="get">
+            <label for="q" class="visually-hidden">Search jobs</label>
+            <input id="q" name="q" type="search" placeholder="Search jobs by keyword, e.g. 'accessibility'"
+              aria-label="Search jobs">
+            <button class="btn" type="submit">Search</button>
+            <p class="home-search__note" style="font-style: italic;">Note: This search opens the Jobs page
+              (static site).</p>
+          </form>
         </div>
-    </header>
 
-    <main id="main">
-        <!-- Hero section: contains company name (h1), slogan and hero illustration. Semantic use: h1 is page title, sections group related content. -->
-        <section class="home-hero home-section" aria-label="Welcome">
-            <div class="container home-hero__inner">
-                <div>
-                    <!-- h1 must be unique on the page. Use company name for the main heading. -->
-                    <h1>Lumina Learn</h1>
-                    <p class="home-hero__slogan">Learning that leaves no one behind.</p>
-                    <p class="home-hero__desc">Lumina Learn builds digital learning tools and online platforms for
-                        schools, universities and workplaces. Every product is designed to be accessible and inclusive
-                        from the first sketch.</p>
+        <figure class="home-hero__image">
+          <img src="images/hero-learning.svg"
+            alt="Illustration of a laptop showing a lesson, with a glowing lamp above it" width="600"
+            height="400">
+        </figure>
+      </div>
+    </section>
 
-                    <!-- Search form: role=search, GET to jobs.html as per the brief. The note is intentionally honest that search is non-functional on static site. -->
-                    <form class="home-search" role="search" action="jobs.html" method="get">
-                        <label for="q" class="visually-hidden">Search jobs</label>
-                        <input id="q" name="q" type="search" placeholder="Search jobs by keyword, e.g. 'accessibility'"
-                            aria-label="Search jobs">
-                        <button class="btn" type="submit">Search</button>
-                        <p class="home-search__note" style="font-style: italic;">Note: This search opens the Jobs page
-                            (static site).</p>
-                    </form>
-                </div>
+    <!-- Hiring timeline: demonstrates merged cells (colspan and rowspan) as required. Wrapped in .table-scroll for small screens. -->
+    <section class="home-section container">
+      <h2>Hiring timeline</h2>
+      <div class="table-scroll">
+        <table class="data-table home-table">
+          <caption>Planned hiring and milestones (fictional)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Month</th>
+              <th scope="col">Role</th>
+              <th scope="col">Key dates</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2">Nov 2026</td>
+              <td>LL101 Front-End Developer</td>
+              <td>Applications open 1 Nov</td>
+              <td>Shortlisted by 15 Nov</td>
+            </tr>
+            <tr>
+              <td colspan="2">LL102 UX and Accessibility Designer</td>
+              <td>Interviews held late Nov</td>
+            </tr>
+            <tr>
+              <td>Dec 2026</td>
+              <td>Offer and onboarding</td>
+              <td>Offers sent 5 Dec</td>
+              <td>Start dates flexible</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-                <figure class="home-hero__image">
-                    <img src="images/hero-learning.svg"
-                        alt="Illustration of a laptop showing a lesson, with a glowing lamp above it" width="600"
-                        height="400">
-                </figure>
-            </div>
-        </section>
+    <!-- Aboriginal & Torres Strait Islander commitment section: owned by Vinh and present on index and footer. -->
+    <section class="home-section home-commitment container" aria-labelledby="commitment-title">
+      <h2 id="commitment-title" class="home-commitment__title">Our commitment to reconciliation</h2>
+      <p>We acknowledge and respect the Traditional Owners of the lands where we live and work, and we pay our
+        respects to Elders past, present and emerging.</p>
+    </section>
 
-        <!-- Hiring timeline: demonstrates merged cells (colspan and rowspan) as required. Wrapped in .table-scroll for small screens. -->
-        <section class="home-section container">
-            <h2>Hiring timeline</h2>
-            <div class="table-scroll">
-                <table class="data-table home-table" summary="Hiring and milestone timeline">
-                    <caption>Planned hiring and milestones (fictional)</caption>
-                    <thead>
-                        <tr>
-                            <th>Month</th>
-                            <th>Role</th>
-                            <th>Key dates</th>
-                            <th>Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td rowspan="2">Nov 2026</td>
-                            <td>LL101 Front-End Developer</td>
-                            <td>Applications open 1 Nov</td>
-                            <td>Shortlisted by 15 Nov</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">LL102 UX and Accessibility Designer</td>
-                            <td>Interviews held late Nov</td>
-                        </tr>
-                        <tr>
-                            <td>Dec 2026</td>
-                            <td>Offer and onboarding</td>
-                            <td>Offers sent 5 Dec</td>
-                            <td>Start dates flexible</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+  </main>
 
-        <!-- Aboriginal & Torres Strait Islander commitment section: owned by Vinh and present on index and footer. Use semantic <aside> to mark an important related statement. -->
-        <section class="home-section home-commitment container" aria-labelledby="commitment-title">
-            <h2 id="commitment-title" class="home-commitment__title">Our commitment to reconciliation</h2>
-            <p>We acknowledge and respect the Traditional Owners of the lands where we live and work, and we pay our
-                respects to Elders past, present and emerging.</p>
-        </section>
-
-    </main>
-
-    <!-- Shared footer: contains external links and the short ATSI statement. -->
-    <footer class="site-footer">
-        <div class="container">
-            <ul class="site-footer__links">
-                <li><a href="https://cos10026appliedwebproject.atlassian.net/jira/software/projects/SCRUM/boards/1?filter=&groupBy=none&atlOrigin=eyJpIjoiNzZkMzRmMWUzNTUzNDNhNjg2OTAyM2YwNDQ5OTMxZjEiLCJwIjoiaiJ9"
-                        target="_blank" rel="noopener noreferrer">Jira project (opens in a new tab)</a></li>
-                <li><a href="https://github.com/106214700/jarviSONy" target="_blank" rel="noopener noreferrer">GitHub
-                        repository (opens in a new tab)</a></li>
-                <li><a href="mailto:info@luminalearn.com">info@luminalearn.com</a></li>
-            </ul>
-            <p class="site-footer__respect">Lumina Learn encourages applications from Aboriginal and Torres Strait
-                Islander peoples.</p>
-            <p class="site-footer__copy">&copy; 2026 Lumina Learn. Student project for COS10026, group jarviSONy.
-                Fictional company.</p>
-        </div>
-    </footer>
+  <!-- Shared footer: contains external links and the short ATSI statement. -->
+  <footer class="site-footer">
+    <div class="container">
+      <ul class="site-footer__links">
+        <li><a href="https://cos10026appliedwebproject.atlassian.net/jira/software/projects/SCRUM/boards/1?filter=&groupBy=none&atlOrigin=eyJpIjoiNzZkMzRmMWUzNTUzNDNhNjg2OTAyM2YwNDQ5OTMxZjEiLCJwIjoiaiJ9" target="_blank" rel="noopener noreferrer">Jira project (opens in a new tab)</a></li>
+        <li><a href="https://github.com/106214700/jarviSONy" target="_blank" rel="noopener noreferrer">GitHub repository (opens in a new tab)</a></li>
+        <li><a href="mailto:info@Pedapigogylearn.com">info@Pedapigogylearn.com</a></li>
+      </ul>
+      <p class="site-footer__respect">Pedapigogy Learn encourages applications from Aboriginal and Torres Strait Islander peoples.</p>
+      <p class="site-footer__copy">&copy; 2026 Pedapigogy Learn. Student project for COS10026, group jarviSONy. Fictional company.</p>
+    </div>
+  </footer>
 </body>
 
 </html>
