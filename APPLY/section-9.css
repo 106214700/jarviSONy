@@ -1,0 +1,135 @@
+/* ==========================================================================
+   SECTION 9 - PAGE: APPLY (owner: Dung)
+   Selector focus: attribute selectors, :invalid, :valid, :checked,
+   :focus-within, ::placeholder, :not().
+   Layout: CSS Grid (fluid, no media queries needed).
+   ========================================================================== */
+.page-apply .apply-intro {
+  max-width: 45rem;
+}
+
+.page-apply .apply-form {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 50rem;
+}
+
+/* min-width: 0 stops a fieldset from forcing the page wider on a phone. */
+.page-apply .apply-fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.page-apply .apply-fieldset legend {
+  padding-inline: var(--space-2);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+/* Grid: as many columns as fit, each at least 16rem wide (or full width). */
+.page-apply .apply-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--space-3) var(--space-4);
+}
+
+.page-apply .apply-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.page-apply .apply-field--wide {
+  grid-column: 1 / -1;
+}
+
+.page-apply .apply-label {
+  font-weight: 600;
+}
+
+/* Required fields show an asterisk; the intro also says what * means. */
+.page-apply .apply-label--required::after {
+  content: " *";
+  color: var(--color-error);
+}
+
+.page-apply .apply-hint {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+}
+
+.page-apply input[type="text"],
+.page-apply input[type="email"],
+.page-apply input[type="tel"],
+.page-apply select,
+.page-apply textarea {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--color-ink-soft);
+  border-radius: var(--radius);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font: inherit;
+}
+
+.page-apply textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.page-apply ::placeholder {
+  color: var(--color-ink-soft);
+  opacity: 1;
+}
+
+/* Highlight the field being used. */
+.page-apply .apply-field:focus-within .apply-label {
+  color: var(--color-primary);
+}
+
+/* Error styling only after the user has typed something (placeholder gone).
+   RULE: every text input MUST have a placeholder attribute, otherwise
+   :placeholder-shown never matches and the field looks invalid on page load. */
+.page-apply input:not(:placeholder-shown):invalid {
+  border-color: var(--color-error);
+  background-color: var(--color-error-bg);
+}
+
+.page-apply input:not(:placeholder-shown):valid {
+  border-color: var(--color-success);
+}
+
+/* Radios and checkboxes: large click area, wrapped in their label. */
+.page-apply .apply-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+}
+
+.page-apply .apply-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.page-apply input[type="radio"],
+.page-apply input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--color-primary);
+}
+
+/* Adjacent sibling + :checked: bold the text of a ticked skill. */
+.page-apply input[type="checkbox"]:checked + span {
+  font-weight: 700;
+}
+
+.page-apply .apply-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
