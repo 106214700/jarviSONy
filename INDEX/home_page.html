@@ -27,7 +27,7 @@
     <header class="site-header">
         <div class="container site-header__inner">
             <a class="site-logo" href="index.html">
-                <img src="images/logo.svg" alt="Lumina Learn logo: a lit lamp shaped like an open book" width="48"
+                <img src="../images/logo.svg" alt="Lumina Learn logo: a lit lamp shaped like an open book" width="48"
                     height="48">
                 <span class="site-logo__name">Lumina Learn</span>
             </a>
@@ -66,46 +66,41 @@
                 </div>
 
                 <figure class="home-hero__image">
-                    <img src="images/hero-learning.svg"
+                    <img src="../images/hero-learning.svg"
                         alt="Illustration of a laptop showing a lesson, with a glowing lamp above it" width="600"
                         height="400">
                 </figure>
             </div>
         </section>
 
-        <!-- Hiring timeline: demonstrates merged cells (colspan and rowspan) as required. Wrapped in .table-scroll for small screens. -->
-        <section class="home-section container">
-            <h2>Hiring timeline</h2>
-            <div class="table-scroll">
-                <table class="data-table home-table" summary="Hiring and milestone timeline">
-                    <caption>Planned hiring and milestones (fictional)</caption>
-                    <thead>
-                        <tr>
-                            <th>Month</th>
-                            <th>Role</th>
-                            <th>Key dates</th>
-                            <th>Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td rowspan="2">Nov 2026</td>
-                            <td>LL101 Front-End Developer</td>
-                            <td>Applications open 1 Nov</td>
-                            <td>Shortlisted by 15 Nov</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">LL102 UX and Accessibility Designer</td>
-                            <td>Interviews held late Nov</td>
-                        </tr>
-                        <tr>
-                            <td>Dec 2026</td>
-                            <td>Offer and onboarding</td>
-                            <td>Offers sent 5 Dec</td>
-                            <td>Start dates flexible</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- Hiring board: milestones are grouped into monthly columns and remain readable on small screens. -->
+        <section class="home-section container" aria-labelledby="hiring-timeline-title">
+            <h2 id="hiring-timeline-title">Hiring timeline</h2>
+            <div class="hiring-board" aria-label="Planned hiring and milestones for 2026">
+                <section class="hiring-board__column" aria-labelledby="hiring-november">
+                    <h3 id="hiring-november">November 2026</h3>
+                    <ul class="hiring-board__cards">
+                        <li class="hiring-board__card">
+                            <h4>LL101 Front-End Developer</h4>
+                            <p><strong>Applications open:</strong> 1 Nov</p>
+                            <p><strong>Shortlisting:</strong> by 15 Nov</p>
+                        </li>
+                        <li class="hiring-board__card">
+                            <h4>LL102 UX and Accessibility Designer</h4>
+                            <p><strong>Interviews:</strong> late November</p>
+                        </li>
+                    </ul>
+                </section>
+                <section class="hiring-board__column" aria-labelledby="hiring-december">
+                    <h3 id="hiring-december">December 2026</h3>
+                    <ul class="hiring-board__cards">
+                        <li class="hiring-board__card">
+                            <h4>Offers and onboarding</h4>
+                            <p><strong>Offers sent:</strong> 5 Dec</p>
+                            <p><strong>Start dates:</strong> flexible</p>
+                        </li>
+                    </ul>
+                </section>
             </div>
         </section>
 
