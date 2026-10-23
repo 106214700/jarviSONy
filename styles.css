@@ -163,12 +163,343 @@ a[target="_blank"]::after { content: " \2197"; }
 .page-home .home-commitment__title { margin-top: 0; }
 
 /* ==========================================================================
-   SECTION 8 - PAGE: JOBS (owner: Nguyen)  - intentionally left for the other team member
+   SECTION 8 - PAGE: JOBS (owner: Nguyen)
    ========================================================================== */
 
+.page-jobs,
+.page-home,
+.page-apply {
+  --color-ink: #4f2634;
+  --color-ink-soft: #765461;
+  --color-bg: #fff8fa;
+  --color-surface: #fff0f5;
+  --color-primary: #fc809f;
+  --color-primary-dark: #751d3a;
+  --color-teal: #751d3a;
+  --color-accent: #fc809f;
+  --color-accent-soft: #ffc9d7;
+  --color-border: #ffc9d7;
+  --color-error: #b3261e;
+  --color-focus: #751d3a;
+  --color-hero-start: #ffe9ef;
+  --color-hero-end: #ffe9ef;
+  --color-hero-dot: #ffc9d7;
+  --color-stripe: #fff0f5;
+  --color-hover: #ffe9ef;
+}
+
+.page-jobs main {
+  padding: var(--space-5) 0;
+}
+
+.page-jobs .jobs-wrap > h1 {
+  margin-bottom: var(--space-2);
+}
+
+.page-jobs .jobs-intro {
+  max-width: 60ch;
+  margin-bottom: var(--space-4);
+  color: var(--color-ink-soft);
+}
+
+.page-jobs .jobs-aside {
+  float: right;
+  width: 25%;
+  margin: 0 0 var(--space-4) var(--space-4);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-teal);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.page-jobs .jobs-aside > h2 {
+  margin-top: 0;
+  font-size: var(--text-xl);
+}
+
+.page-jobs .jobs-aside > :last-child {
+  margin-bottom: 0;
+}
+
+.page-jobs .jobs-wrap::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.page-jobs #open-roles {
+  display: flow-root;
+  padding-bottom: var(--space-2);
+  border-bottom: 3px solid var(--color-accent);
+}
+
+.page-jobs .jobs-job {
+  display: flow-root;
+  margin: var(--space-3) 0 var(--space-4);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.page-jobs .jobs-job > h3 {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+  color: var(--color-primary-dark);
+}
+
+.page-jobs .jobs-job > p {
+  max-width: 70ch;
+}
+
+.page-jobs .jobs-meta {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--space-1) var(--space-3);
+  margin: var(--space-3) 0 var(--space-4);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+}
+
+.page-jobs .jobs-meta dt {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.page-jobs .jobs-meta dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.page-jobs .jobs-meta dd:first-of-type {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.page-jobs .jobs-block {
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+}
+
+.page-jobs .jobs-block h4 {
+  margin-bottom: var(--space-2);
+  color: var(--color-teal);
+}
+
+.page-jobs .jobs-block ul {
+  margin-bottom: 0;
+  padding-left: 1.4rem;
+}
+
+.page-jobs .jobs-block li::marker {
+  color: var(--color-primary);
+}
+
+.page-jobs .jobs-job > p:last-child {
+  margin: var(--space-3) 0 0;
+}
+
+.page-jobs .jobs-job .btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.page-jobs .jobs-wrap > section[aria-labelledby="how-to-apply"] {
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.page-jobs .jobs-wrap > section[aria-labelledby="how-to-apply"] > h2 {
+  margin-top: 0;
+}
+
+.page-jobs .jobs-steps {
+  margin-bottom: 0;
+  padding-left: 1.5rem;
+}
+
+.page-jobs .jobs-steps li {
+  margin-bottom: var(--space-2);
+}
+
+.page-jobs .jobs-steps li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 48rem) {
+  .page-jobs .jobs-aside {
+    float: none;
+    width: auto;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 34rem) {
+  .page-jobs .jobs-job,
+  .page-jobs .jobs-wrap > section[aria-labelledby="how-to-apply"] {
+    padding: var(--space-3);
+  }
+
+  .page-jobs .jobs-meta {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .page-jobs .jobs-meta dd {
+    margin-bottom: var(--space-2);
+  }
+
+  .page-jobs .jobs-meta dd:last-child {
+    margin-bottom: 0;
+  }
+}
+
 /* ==========================================================================
-   SECTION 9 - PAGE: APPLY (owner: Dung) - intentionally left for the other team member
+   SECTION 9 - PAGE: APPLY (owner: Dung)
+   Selector focus: attribute selectors, :invalid, :valid, :checked,
+   :focus-within, ::placeholder, :not().
+   Layout: CSS Grid (fluid, no media queries needed).
    ========================================================================== */
+.page-apply .apply-intro {
+  max-width: 45rem;
+}
+
+.page-apply .apply-form {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 50rem;
+}
+
+/* min-width: 0 stops a fieldset from forcing the page wider on a phone. */
+.page-apply .apply-fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.page-apply .apply-fieldset legend {
+  padding-inline: var(--space-2);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+/* Grid: as many columns as fit, each at least 16rem wide (or full width). */
+.page-apply .apply-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--space-3) var(--space-4);
+}
+
+.page-apply .apply-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.page-apply .apply-field--wide {
+  grid-column: 1 / -1;
+}
+
+.page-apply .apply-label {
+  font-weight: 600;
+}
+
+/* Required fields show an asterisk; the intro also says what * means. */
+.page-apply .apply-label--required::after {
+  content: " *";
+  color: var(--color-error);
+}
+
+.page-apply .apply-hint {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+}
+
+.page-apply input[type="text"],
+.page-apply input[type="email"],
+.page-apply input[type="tel"],
+.page-apply select,
+.page-apply textarea {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--color-ink-soft);
+  border-radius: var(--radius);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font: inherit;
+}
+
+.page-apply textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.page-apply ::placeholder {
+  color: var(--color-ink-soft);
+  opacity: 1;
+}
+
+/* Highlight the field being used. */
+.page-apply .apply-field:focus-within .apply-label {
+  color: var(--color-primary);
+}
+
+/* Error styling only after the user has typed something (placeholder gone).
+   RULE: every text input MUST have a placeholder attribute, otherwise
+   :placeholder-shown never matches and the field looks invalid on page load. */
+.page-apply input:not(:placeholder-shown):invalid {
+  border-color: var(--color-error);
+  background-color: var(--color-error-bg);
+}
+
+.page-apply input:not(:placeholder-shown):valid {
+  border-color: var(--color-success);
+}
+
+/* Radios and checkboxes: large click area, wrapped in their label. */
+.page-apply .apply-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+}
+
+.page-apply .apply-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.page-apply input[type="radio"],
+.page-apply input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--color-primary);
+}
+
+/* Adjacent sibling + :checked: bold the text of a ticked skill. */
+.page-apply input[type="checkbox"]:checked + span {
+  font-weight: 700;
+}
+
+.page-apply .apply-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
 
 /* ==========================================================================
    SECTION 10 - PAGE: ABOUT (owner: Quan) - intentionally left for the other team member
