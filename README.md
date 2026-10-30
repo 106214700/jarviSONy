@@ -1,4 +1,4 @@
-Pedapigogy Learn — Sprint 1 (Vinh: home, nav, footer)
+Pedapigogy — Sprint 1 (Vinh: home, nav, footer)
 
 Files included here (created for the user):
 - index.html  (Home page, header, nav, footer, hero, table, search form)

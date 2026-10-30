@@ -15,6 +15,7 @@
   --color-surface: #F4F6FB;
   --color-primary: #3D3BA6;
   --color-primary-dark: #2A2878;
+  --color-header: #D34F76;
   --color-teal: #0E7C7B;
   --color-accent: #F2B134;
   --color-accent-soft: #FFE6AD;
@@ -100,14 +101,15 @@ a[target="_blank"]::after { content: " \2197"; }
 /* ==========================================================================
    SECTION 4 - HEADER AND NAV (shared, owned by Vinh)
    ========================================================================== */
-.site-header { background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
+.site-header { background: var(--color-header); border-bottom: 1px solid var(--color-primary-dark); color: #fff; }
 .site-header__inner { display:flex; align-items:center; gap: var(--space-3); padding: var(--space-3) 0; }
+.site-header a:hover, .site-header a:focus { background-color: transparent; }
 .site-logo { display:flex; align-items:center; gap: .5rem; text-decoration: none; color: inherit; }
 .site-logo__name { font-weight:700; }
 
 .site-nav__list { list-style: none; display:flex; gap: var(--space-3); margin:0; padding:0; }
-.site-nav__list a { color: var(--color-primary-dark); padding-bottom: .25rem; }
-.site-nav__list a[aria-current="page"] { border-bottom: 3px solid var(--color-accent-soft); }
+.site-nav__list a { color: inherit; padding-bottom: .25rem; }
+.site-nav__list a[aria-current="page"] { border-bottom: 3px solid #fff; }
 
 /* Skip link: visible on focus for keyboard users */
 .skip-link {
