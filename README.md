@@ -1,18 +1,35 @@
-Pedapigogy Learn — Sprint 1 (Vinh: home, nav, footer)
+Pedapigogy — COS10026 Sprint 1
+Team: jarviSONy (Vinh, Nguyen, Dung, Quan)
 
-Files included here (created for the user):
-- index.html  (Home page, header, nav, footer, hero, table, search form)
-- styles.css  (Sections 0-7 and 12: tokens, header, footer, home styles)
-- images/logo.svg
-- images/hero-learning.svg
-- check-site.sh (basic site checks, bash)
-- Integration_Guide.docx (team integration guide)
+Static HTML5 + CSS3 site. No JavaScript.
 
-How to use:
-1. Copy these files into your project root (all pages in same folder). Keep relative paths: styles.css and images/ are referenced from the HTML root.
-2. Open index.html in a browser to preview.
-3. Run validators (Nu HTML Checker and W3C CSS Validator) and fix any environment-specific warnings.
+PAGES
+  index.html  — Home (Vinh)
+  jobs.html   — Jobs (Nguyen)
+  apply.html  — Apply form (Dung)
+  about.html  — About team (Quan)
 
-Notes:
-- No JavaScript, no frameworks. XHTML5/CSS3 only as requested.
-- I created a Word .docx guide in this folder explaining integration steps.
+FOLDER
+  Keep all .html files and styles.css in the same folder.
+  Put images in /images/ (logo.svg, hero-learning.svg, group-photo.jpg).
+
+HOW TO OPEN
+  Open index.html in a browser. No server needed.
+
+CSS
+  styles.css is shared.
+  Sections 0–7 + 12 = Vinh (tokens, header, footer, home)
+  Section 8 = Nguyen (jobs)
+  Section 9 = Dung (apply)
+  Section 10 = Quan (about)
+  Section 11 = empty (Sprint 2 responsive)
+
+THEME
+  Soft pink. Student-pig logo (SVG).
+
+LINKS
+  Jira: https://cos10026appliedwebproject.atlassian.net/jira/software/projects/SCRUM/boards/1
+  GitHub: https://github.com/106214700/jarviSONy
+
+Validate HTML and CSS before submit.
+© 2026 Pedapigogy. Fictional student project.
