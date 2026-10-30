@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+  <!-- head and meta tags for the page of Pedapigogy website -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Pedapigogy</title>
+
+  <meta name="description" content="Meet team jarviSONy: members, contributions, quotes, group photo and fun facts.">
+  <meta name="keywords" content="Pedapigogy, EdTech, accessible education, careers, web developer jobs">
+  <meta name="author" content="jarviSONy: Bui The Vinh, Nguyen Khoa Nguyen, Pham Tran Quoc Dung, Bui Minh Quan">
+  
+  
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- embedded css -->
+  <style>
+    /* apply for class page-about and about figure figcaption only, not body or other elements */
+    .page-about .about-figure figcaption {
+      font-style: italic;
+    }
+  </style>
+
+</head>
+
+<!-- body part  -->
+<body class="page-about">
+
+  <!-- anchor skip link to main content for accessibility --> 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- HEADER part  and navigation linked with 4 pages -->
+  <header class="site-header">
+  
+    <div class="container site-header__inner">
+      <!-- anchor logo link to home page with image and text -->
+      <a class="site-logo" href="index.html">
+        <img src="images/pedapigogypiggyeyeglass.png" alt="Pedapigogy logo: a pig with glasses" width="48" height="48">
+        <span class="site-logo__name">Pedapigogy</span>
+      </a>
+      
+
+      <nav class="site-nav" aria-label="Main navigation">
+
+        <ul class="site-nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="apply.html">Apply</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- main content about our team and each member --> 
+  <main id="main" >
+    <div class="container stack">
+      <!-- 1 H1 heading for the page -->
+      <h1>About our team</h1>
+
+      <section aria-labelledby="about-group">
+
+        <!-- in line css -->
+        <h2 id="about-group" style="margin-top: 2rem;">Our group</h2>
+
+        <div class="about-group">
+          <!-- UNORDERed nested LIST -->
+          <ul>
+            <li>Group name: jarviSONy
+              <ul>
+                <li>Class day and time: Saturday Morning</li>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+
+      </section>
+
+
+      <!-- SECTION 2: DEFINITION LIST for each member -->
+      <section aria-labelledby="about-members">
+
+        
+        <!-- about member and their contribution  -->
+        <h2 id="about-members">Contributions</h2>
+
+        <dl class="about-members">
+          <!-- FIRST MEMBER ALSO KNOWN AS THE LEADER VINH -->
+          <dt>Bùi Thế Vinh <span class="about-id">106214700</span></dt>
+
+          <dd><strong>Contribution:</strong> Team leader. Built the home page (SCRUM-12), the common navigation menu and footer (SCRUM-13), the shared stylesheet and the final merge.</dd>
+          
+          <dd>
+            <blockquote lang="vi">
+              <p>skibidi dom dom dom vâng vâng</p>
+            </blockquote>
+            <p class="about-quote-en" lang="en">English: <q>skibidi dom dom dom yes yes.</q> <cite>Vietnamese proverb</cite></p>
+          </dd>
+
+
+          <!-- SECOND MEMBER : NGUYEN -->
+          <dt>Nguyễn Khoa Nguyên <span class="about-id">106392415</span></dt>
+
+          <dd><strong>Contribution:</strong> Built the Jobs page (SCRUM-14) with two realistic job descriptions.</dd>
+          <dd>
+            <blockquote lang="ar">
+              <p> اللي اختشوا ماتوا</p>
+            </blockquote>
+            <p class="about-quote-en" lang="en">English: <q>Those who were shy/modest have died</q> <cite>Egyptian proverb</cite></p>
+          </dd>
+
+          <!-- THIRD MEMBER : DUNG -->
+          <dt>Phạm Trần Quốc Dũng <span class="about-id">106396488</span></dt>
+          <dd><strong>Contribution:</strong> Built the Apply page (SCRUM-15) with the validated application form.</dd>
+          <dd>
+            <blockquote lang="vi">
+              <p>2 ngày lọ 1 lần là ngon.</p>
+            </blockquote>
+            <p class="about-quote-en" lang="en">English: <q>2 days goon one in a row is delicious.</q> <cite>Vietnamese proverb</cite></p>
+          </dd>
+
+          <!-- FOURTH MEMBER : QUAN -->
+          <dt>Bùi Minh Quân <span class="about-id">106216214</span></dt>
+          <dd><strong>Contribution:</strong> Built the About page (SCRUM-16) with the team information.</dd>
+
+          <dd>
+            <blockquote lang="vi">
+              <p>Tất cả những loài động vật đều bình đẳng, nhưng có 1 số con bình đẳng hơn những con khác</p>
+            </blockquote>
+            <p class="about-quote-en" lang="en">English: <q>All animals are equal, but some animal are more equal than others.</q> <cite>Soviet Union proverb</cite></p>
+          </dd>
+
+        </dl> 
+
+      </section>
+
+      <!-- SECTION 3 group photo-->
+      <section aria-labelledby="about-photo">
+
+        <h2 id="about-photo">Our photo</h2>
+        <figure class="about-figure">
+          <img src="images/group-photo.jpg" alt="The four members of team jarviSONy standing together along side the lecturer" width="650" height="480">
+          <figcaption>Figure 1: Team jarviSONy: Vinh, Nguyen, Dung and Quan.</figcaption>
+        </figure>
+
+      </section>
+
+      <!-- SECTION 4 fun fact table about each member -->
+      <section aria-labelledby="about-facts">
+
+        <h2 id="about-facts">Fun facts</h2>
+
+        <div class="table-scroll" role="region" aria-labelledby="about-facts" tabindex="0">
+
+          <table class="about-table">
+            <caption>Fun facts about each team member</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Member</th>
+                <th scope="col">Dream job</th>
+                <th scope="col">Coding snack</th>
+                <th scope="col">Hometown</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <th scope="row">Bùi Thế Vinh</th>
+                <td>Data Scientits</td>
+                <td>Instant noodles</td>
+                <td>Ho Chi Minh City</td>
+              </tr>
+            
+              <tr>
+                <th scope="row">Nguyễn Khoa Nguyên</th>
+                <td>UX designer, Game Developer</td>
+                <td> Bac Xiu Iced coffee</td>
+                <td>Ha Nam, Cairo</td>
+              </tr>
+
+              <tr>
+                <th scope="row">Phạm Trần Quốc Dũng</th>
+                <td>ML developer mặt lồn </td>
+                <td>Pussy</td>
+                <td>Khanh Hoa</td>
+              </tr>
+
+              <tr>
+                <th scope="row">Bùi Minh Quân</th>
+                <td>Assassin</td>
+                <td>Chocolate</td>
+                <td>Saigon</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div> 
+  </main> 
+
+  <!-- FOOTER FOR ALL PAGES -->
+  <footer class="site-footer">
+
+    <div class="container">
+
+      <ul class="site-footer__links">
+        <li><a href="https://cos10026appliedwebproject.atlassian.net/jira/software/projects/SCRUM/boards/1" target="_blank" rel="noopener noreferrer">Jira project (opens in a new tab)</a></li>
+        <li><a href="https://github.com/106214700/jarviSONy" target="_blank" rel="noopener noreferrer">GitHub repository (opens in a new tab)</a></li>
+        <li><a href="mailto:info@pedapigogy.com">info@pedapigogy.com</a></li>
+      </ul>
+
+      <p class="site-footer__respect">Pedapigogy encourages applications from Aboriginal and Torres Strait Islander peoples.</p>
+      <p class="site-footer__copy">&copy; 2026 Pedapigogy. Student project for COS10026, group jarviSONy. Fictional company.</p>
+    </div>
+
+  </footer>
+</body>
+</html>
