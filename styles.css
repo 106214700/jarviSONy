@@ -422,6 +422,10 @@ a[target="_blank"]::after { content: " \2197"; }
   max-width: 45rem;
 }
 
+.page-apply main {
+  padding: var(--space-5) 0;
+}
+
 .page-apply .apply-form {
   display: grid;
   gap: var(--space-4);
