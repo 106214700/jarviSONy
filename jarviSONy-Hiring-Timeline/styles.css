@@ -1,0 +1,821 @@
+/*
+  styles.css
+  Sections 0-7 and 12 owned by Vinh (home, header, footer and shared tokens).
+  Follow the project contract: variables, spacing, section banners and page-prefixed selectors.
+*/
+
+/* ==========================================================================
+   SECTION 0 - TOKENS (colors, spacing, type scale)
+   ========================================================================== */
+:root {
+  /* Colours (use variables only) */
+  --color-ink: #1B1F3B;
+  --color-ink-soft: #4A4F73;
+  --color-bg: #FFFFFF;
+  --color-surface: #F4F6FB;
+  --color-primary: #3D3BA6;
+  --color-primary-dark: #2A2878;
+  --color-header: #D34F76;
+  --color-teal: #0E7C7B;
+  --color-accent: #F2B134;
+  --color-accent-soft: #FFE6AD;
+  --color-border: #C9CFE3;
+  --color-error: #B3261E;
+  --color-focus: #B45309;
+  --color-hero-start: #EEF0FF;
+  --color-hero-end: #FFF6DF;
+  --color-hero-dot: #D5D8F2;
+  --color-stripe: #EEF1FA;
+  --color-hover: #FFF1CC;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+
+  /* Type scale */
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+
+  --radius: 0.5rem;
+  --max-width: 70rem;
+}
+
+/* ==========================================================================
+   SECTION 1 - RESET & BASE
+   ========================================================================== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: var(--color-ink);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  font-size: var(--text-base);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+/* Small utility: even vertical spacing between children */
+.stack > * + * { margin-top: var(--space-3); }
+
+/* Visually hidden for accessible labels */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px; overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
+
+/* ==========================================================================
+   SECTION 2 - TYPOGRAPHY
+   ========================================================================== */
+h1 { font-size: var(--text-3xl); margin: 0 0 var(--space-3) 0; color: var(--color-primary-dark); }
+h2 { font-size: var(--text-2xl); margin-top: var(--space-4); }
+h3, h4 { color: var(--color-teal); }
+
+p { margin: 0 0 var(--space-3) 0; color: var(--color-ink); }
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover, a:focus { background-color: var(--color-hover); }
+
+a[target="_blank"]::after { content: " \2197"; }
+
+/* ==========================================================================
+   SECTION 3 - LAYOUT HELPERS
+   ========================================================================== */
+.container { display: block; }
+
+/* ==========================================================================
+   SECTION 4 - HEADER AND NAV (shared, owned by Vinh)
+   ========================================================================== */
+.site-header { background: var(--color-header); border-bottom: 1px solid var(--color-primary-dark); color: #fff; }
+.site-header__inner { display:flex; align-items:center; gap: var(--space-3); padding: var(--space-3) 0; }
+.site-header a:hover, .site-header a:focus { background-color: transparent; }
+.site-logo { display:flex; align-items:center; gap: .5rem; text-decoration: none; color: inherit; }
+.site-logo__name { font-weight:700; }
+
+.site-nav__list { list-style: none; display:flex; gap: var(--space-3); margin:0; padding:0; }
+.site-nav__list a { color: inherit; padding-bottom: .25rem; }
+.site-nav__list a[aria-current="page"] { border-bottom: 3px solid #fff; }
+
+/* Skip link: visible on focus for keyboard users */
+.skip-link {
+  position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.skip-link:focus { position: static; left: 0; width: auto; height: auto; background: var(--color-primary-dark); color: var(--color-bg); padding: .5rem; z-index: 1000; }
+
+/* ==========================================================================
+   SECTION 5 - FOOTER (shared)
+   ========================================================================== */
+.site-footer { background: var(--color-surface); border-top: 1px solid var(--color-border); padding: var(--space-4) 0; color: var(--color-primary-dark); }
+.site-footer__links { list-style:none; padding:0; display:flex; gap: var(--space-3); margin:0 0 var(--space-2) 0; }
+.site-footer__respect { margin: 0 0 var(--space-2) 0; color: var(--color-ink-soft); }
+.site-footer__copy { font-size: var(--text-sm); color: var(--color-ink-soft); }
+
+/* ==========================================================================
+   SECTION 6 - SHARED COMPONENTS
+   ========================================================================== */
+.btn {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border: none; padding: .5rem .75rem; border-radius: .375rem; cursor: pointer;
+}
+
+.data-table { width:100%; border-collapse: collapse; }
+.data-table caption { padding-bottom: var(--space-2); font-weight: 700; text-align:left; color: var(--color-primary-dark); }
+.data-table th, .data-table td { padding: var(--space-2) var(--space-3); border: 1px solid var(--color-border); text-align:left; vertical-align:top; }
+.data-table thead th { background-color: var(--color-primary-dark); color: var(--color-bg); }
+
+.table-scroll { overflow:auto; }
+
+/* External links get visible arrow as well as text "opens in a new tab" */
+a[target="_blank"]::after { content: " \2197"; }
+
+/* ==========================================================================
+   SECTION 7 - PAGE: HOME (owner: Vinh)
+   ========================================================================== */
+/* The selectors for page-specific rules begin with .page-home to prevent cross-page leaks. */
+.page-home .home-hero { padding: var(--space-5) 0; background: linear-gradient(90deg, var(--color-hero-start), var(--color-hero-end));
+  /* A subtle dot pattern using repeating-radial-gradient to meet the CSS-only background requirement */
+  background-image: radial-gradient(circle at 10% 20%, var(--color-hero-dot) 1px, transparent 1px), linear-gradient(90deg, var(--color-hero-start), var(--color-hero-end));
+}
+.page-home .home-hero__inner { display: grid; grid-template-columns: 1fr 320px; gap: var(--space-4); align-items: center; }
+.page-home .home-hero__slogan { font-weight: 600; color: var(--color-primary-dark); }
+.page-home .home-hero__desc { color: var(--color-ink-soft); max-width: 60ch; }
+.page-home .home-hero__image img { width: 100%; height: auto; display: block; border-radius: var(--radius); }
+
+.page-home .home-search { display:flex; gap: .5rem; align-items:center; margin-top: var(--space-3); }
+.page-home .home-search input[type="search"] { padding: .5rem; border:1px solid var(--color-border); border-radius: .25rem; }
+.page-home .home-search .home-search__note { margin: 0; color: var(--color-ink-soft); font-size: var(--text-sm); }
+
+.page-home .hiring-board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  background: var(--color-primary);
+}
+.page-home .hiring-board__column {
+  min-width: 0;
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+}
+.page-home .hiring-board__column > h3 {
+  margin: 0 0 var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-primary-dark);
+}
+.page-home .hiring-board__cards {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.page-home .hiring-board__card {
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+.page-home .hiring-board__card h4 { margin-bottom: var(--space-2); color: var(--color-primary-dark); }
+.page-home .hiring-board__card p { margin-bottom: 0; color: var(--color-ink-soft); }
+.page-home .hiring-board__card p + p { margin-top: var(--space-1); }
+.page-home .hiring-board__card strong { color: var(--color-ink); }
+
+.page-home .home-commitment { background: var(--color-surface); padding: var(--space-3); border-left: 4px solid var(--color-teal); margin-top: var(--space-4); }
+.page-home .home-commitment__title { margin-top: 0; }
+
+@media (max-width: 48rem) {
+  .page-home .home-hero__inner,
+  .page-home .hiring-board { grid-template-columns: 1fr; }
+}
+
+/* ========================================================================== 
+   SECTION 8 - PAGE: JOBS (owner: Nguyen)
+   ========================================================================== */
+
+.page-jobs,
+.page-home,
+.page-apply {
+  --color-ink: #4f2634;
+  --color-ink-soft: #765461;
+  --color-bg: #fff8fa;
+  --color-surface: #fff0f5;
+  --color-primary: #fc809f;
+  --color-primary-dark: #751d3a;
+  --color-teal: #751d3a;
+  --color-accent: #fc809f;
+  --color-accent-soft: #ffc9d7;
+  --color-border: #ffc9d7;
+  --color-error: #b3261e;
+  --color-focus: #751d3a;
+  --color-hero-start: #ffe9ef;
+  --color-hero-end: #ffe9ef;
+  --color-hero-dot: #ffc9d7;
+  --color-stripe: #fff0f5;
+  --color-hover: #ffe9ef;
+}
+
+.page-jobs main {
+  padding: var(--space-5) 0;
+}
+
+.page-jobs .jobs-wrap > h1 {
+  margin-bottom: var(--space-2);
+}
+
+.page-jobs .jobs-intro {
+  max-width: 60ch;
+  margin-bottom: var(--space-4);
+  color: var(--color-ink-soft);
+}
+
+.page-jobs .jobs-aside {
+  float: right;
+  width: 25%;
+  margin: 0 0 var(--space-4) var(--space-4);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-teal);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.page-jobs .jobs-aside > h2 {
+  margin-top: 0;
+  font-size: var(--text-xl);
+}
+
+.page-jobs .jobs-aside > :last-child {
+  margin-bottom: 0;
+}
+
+.page-jobs .jobs-wrap::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.page-jobs #open-roles {
+  display: flow-root;
+  padding-bottom: var(--space-2);
+  border-bottom: 3px solid var(--color-accent);
+}
+
+.page-jobs .jobs-job {
+  display: flow-root;
+  margin: var(--space-3) 0 var(--space-4);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.page-jobs .jobs-job > h3 {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+  color: var(--color-primary-dark);
+}
+
+.page-jobs .jobs-job > p {
+  max-width: 70ch;
+}
+
+.page-jobs .jobs-meta {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--space-1) var(--space-3);
+  margin: var(--space-3) 0 var(--space-4);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+}
+
+.page-jobs .jobs-meta dt {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.page-jobs .jobs-meta dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.page-jobs .jobs-meta dd:first-of-type {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.page-jobs .jobs-block {
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+}
+
+.page-jobs .jobs-block h4 {
+  margin-bottom: var(--space-2);
+  color: var(--color-teal);
+}
+
+.page-jobs .jobs-block ul {
+  margin-bottom: 0;
+  padding-left: 1.4rem;
+}
+
+.page-jobs .jobs-block li::marker {
+  color: var(--color-primary);
+}
+
+.page-jobs .jobs-job > p:last-child {
+  margin: var(--space-3) 0 0;
+}
+
+.page-jobs .jobs-job .btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.page-jobs .jobs-wrap > section[aria-labelledby="how-to-apply"] {
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.page-jobs .jobs-wrap > section[aria-labelledby="how-to-apply"] > h2 {
+  margin-top: 0;
+}
+
+.page-jobs .jobs-steps {
+  margin-bottom: 0;
+  padding-left: 1.5rem;
+}
+
+.page-jobs .jobs-steps li {
+  margin-bottom: var(--space-2);
+}
+
+.page-jobs .jobs-steps li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 48rem) {
+  .page-jobs .jobs-aside {
+    float: none;
+    width: auto;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 34rem) {
+  .page-jobs .jobs-job,
+  .page-jobs .jobs-wrap > section[aria-labelledby="how-to-apply"] {
+    padding: var(--space-3);
+  }
+
+  .page-jobs .jobs-meta {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .page-jobs .jobs-meta dd {
+    margin-bottom: var(--space-2);
+  }
+
+  .page-jobs .jobs-meta dd:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ==========================================================================
+   SECTION 9 - PAGE: APPLY (owner: Dung)
+   Selector focus: attribute selectors, :invalid, :valid, :checked,
+   :focus-within, ::placeholder, :not().
+   Layout: CSS Grid (fluid, no media queries needed).
+   ========================================================================== */
+.page-apply .apply-intro {
+  max-width: 45rem;
+}
+
+.page-apply .apply-form {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 50rem;
+}
+
+/* min-width: 0 stops a fieldset from forcing the page wider on a phone. */
+.page-apply .apply-fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.page-apply .apply-fieldset legend {
+  padding-inline: var(--space-2);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+/* Grid: as many columns as fit, each at least 16rem wide (or full width). */
+.page-apply .apply-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--space-3) var(--space-4);
+}
+
+.page-apply .apply-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.page-apply .apply-field--wide {
+  grid-column: 1 / -1;
+}
+
+.page-apply .apply-label {
+  font-weight: 600;
+}
+
+/* Required fields show an asterisk; the intro also says what * means. */
+.page-apply .apply-label--required::after {
+  content: " *";
+  color: var(--color-error);
+}
+
+.page-apply .apply-hint {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+}
+
+.page-apply input[type="text"],
+.page-apply input[type="email"],
+.page-apply input[type="tel"],
+.page-apply select,
+.page-apply textarea {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--color-ink-soft);
+  border-radius: var(--radius);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font: inherit;
+}
+
+.page-apply textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.page-apply ::placeholder {
+  color: var(--color-ink-soft);
+  opacity: 1;
+}
+
+/* Highlight the field being used. */
+.page-apply .apply-field:focus-within .apply-label {
+  color: var(--color-primary);
+}
+
+/* Error styling only after the user has typed something (placeholder gone).
+   RULE: every text input MUST have a placeholder attribute, otherwise
+   :placeholder-shown never matches and the field looks invalid on page load. */
+.page-apply input:not(:placeholder-shown):invalid {
+  border-color: var(--color-error);
+  background-color: var(--color-error-bg);
+}
+
+.page-apply input:not(:placeholder-shown):valid {
+  border-color: var(--color-success);
+}
+
+/* Radios and checkboxes: large click area, wrapped in their label. */
+.page-apply .apply-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+}
+
+.page-apply .apply-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.page-apply input[type="radio"],
+.page-apply input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--color-primary);
+}
+
+/* Adjacent sibling + :checked: bold the text of a ticked skill. */
+.page-apply input[type="checkbox"]:checked + span {
+  font-weight: 700;
+}
+
+.page-apply .apply-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}/* ==========================================================================
+   SECTION 10 - PAGE: ABOUT (owner: Quan)
+   - Scope: Toàn bộ bộ chọn bắt đầu bằng `.page-about` để tránh rò rỉ style (CSS leak) sang các trang khác.
+   - Assignment Rubric Covered: R30 (Nested list), R31 & R32 (Definition list & Quotes), 
+     R33 & R36 (Group photo & borders), R34 & R37 (Table, Hex colours, Zebra & Hover), R35 (ID badges).
+   - Mandatory Selectors included: Adjacent sibling (+), General sibling (~), Attribute selector ([lang="vi"]),
+     Pseudo-element (::before), Pseudo-classes (:first-of-type, :nth-child(even), :hover).
+   ========================================================================== */
+
+/* 1. KHAI BÁO BẢNG MÀU THỐNG NHẤT (Piggy Pink & Burgundy Tokens)
+   - Định nghĩa trực tiếp trên `.page-about` nhằm đảm bảo trang About luôn hiển thị chuẩn màu thương hiệu. */
+.page-about {
+  --color-ink: #4f2634;          /* Màu chữ chính: nâu tím đậm, tương phản cao */
+  --color-ink-soft: #765461;     /* Màu chữ phụ: xám tím làm dịu mắt */
+  --color-bg: #fff8fa;           /* Màu nền toàn trang: trắng hồng kem */
+  --color-surface: #fff0f5;      /* Màu nền các thẻ card/khung khối */
+  --color-primary: #fc809f;      /* Màu hồng điểm nhấn thương hiệu */
+  --color-primary-dark: #751d3a; /* Màu đỏ rượu Burgundy: dùng cho tiêu đề & huy hiệu */
+  --color-teal: #751d3a;         /* Đồng bộ màu viền trích dẫn sang tông đỏ rượu */
+  --color-accent: #fc809f;       /* Màu gạch chân trang trí tiêu đề */
+  --color-accent-soft: #ffc9d7;  /* Màu hồng nhạt viền ngoài */
+  --color-border: #ffc9d7;       /* Màu viền khung card chuẩn */
+  --color-error: #b3261e;        /* Màu đỏ cảnh báo lỗi */
+  --color-focus: #751d3a;        /* Màu viền focus cho bàn phím tiếp cận (A11y) */
+  --color-hero-start: #ffe9ef;
+  --color-hero-end: #ffe9ef;
+  --color-hero-dot: #ffc9d7;
+  --color-stripe: #fff0f5;
+  --color-hover: #ffe9ef;        /* Màu nền khi di chuột qua hàng bảng */
+}
+
+/* Khoảng cách đệm trên/dưới cho khu vực nội dung chính của trang About */
+.page-about main {
+  padding: var(--space-5) 0;
+}
+
+/* Tiêu đề h2: Tô màu đỏ rượu và tạo vạch kẻ màu hồng dày 3px phía dưới tạo điểm nhấn phân đoạn */
+.page-about h2 {
+  color: var(--color-primary-dark);
+  padding-bottom: var(--space-2);
+  border-bottom: 3px solid var(--color-accent);
+}
+
+/* 2. nested list about group*/
+/* Khung bọc danh sách nhóm: Dạng thẻ Card có viền trái dày 4px màu hồng chủ đạo (R30) */
+.page-about .about-group {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius);
+}
+
+/* Danh sách cấp 1: Bỏ margin mặc định và lùi lề trái 1.4rem để dấu chấm list thẳng hàng */
+.page-about .about-group ul {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+/* Danh sách con lồng nhau cấp 2 (Nested List): Giãn khoảng cách trên 0.25rem so với mục cha */
+.page-about .about-group ul ul {
+  margin-top: var(--space-1);
+}
+
+/* Pseudo-element ::marker: Đổi màu chấm tròn đầu dòng danh sách sang màu hồng thương hiệu */
+.page-about .about-group li::marker {
+  color: var(--color-primary);
+}
+
+/* 3. member list */
+/* Thùng chứa danh sách định nghĩa thành viên (R31, R32): Bo góc và viền trái màu hồng đồng bộ */
+.page-about .about-members {
+  margin: var(--space-3) 0;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius);
+}
+
+/* Thẻ <dt> (Definition Term - Tên thành viên): Kích thước lớn, in đậm và có đường kẻ ngăn cách phía trên */
+.page-about .about-members dt {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+/* Pseudo-class :first-of-type: Bỏ đường kẻ và khoảng cách đỉnh cho thành viên đầu tiên (Vinh) */
+.page-about .about-members dt:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* BADGE ID: inline-block, rounded, monospace font, red on pink background, with "ID" prefix */
+/* Thỏa mãn tiêu chí R35 Rubric: Dùng trực tiếp mã màu Hex literal theo yêu cầu đề bài.
+   - Chữ màu đỏ rượu #751d3a trên nền hồng phấn #ffe9ef tạo độ tương phản 7.8:1, đạt chuẩn WCAG AAA.
+   - display: inline-block cho phép bo góc tròn (pill badge) và nằm cùng dòng với tên thành viên. */
+.page-about .about-id {
+  display: inline-block;
+  margin-left: var(--space-2);
+  padding: 0.15rem 0.65rem;
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: #751d3a;
+  background-color: #ffe9ef;
+  border: 1px solid #fc809f;
+  border-radius: 999px;
+}
+
+/* Pseudo-element ::before: Tự động chèn tiền tố "ID " bằng CSS, tách biệt nội dung dữ liệu HTML và trang trí */
+.page-about .about-id::before {
+  content: "ID ";
+}
+
+/* Thiết lập lề cơ sở cho tất cả các thẻ mô tả <dd> */
+.page-about .about-members dd {
+  margin: var(--space-2) 0 0 0;
+}
+
+/* BỘ CHỌN BẮT BUỘC SECTION 10: Adjacent Sibling Combinator (+)
+   - Chọn duy nhất thẻ <dd> đầu tiên nằm NGAY SAU thẻ <dt> (dòng Contribution) để tạo khoảng cách nhỏ */
+.page-about .about-members dt + dd {
+  margin-top: var(--space-1);
+}
+
+/* BỘ CHỌN BẮT BUỘC SECTION 10: General Sibling Combinator (~)
+   - Chọn tất cả các thẻ <dd> anh em phía sau (khối Quote và dịch nghĩa) để tạo độ giãn cách đều đặn */
+.page-about .about-members dd ~ dd {
+  margin-top: var(--space-2);
+}
+
+/* quote citation */
+/* Khối trích dẫn câu tiếng Việt: Nền trắng kem, viền bo và vạch đứng màu đỏ rượu bên trái */
+.page-about .about-members blockquote {
+  margin: var(--space-2) 0;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-teal);
+  border-radius: var(--radius);
+}
+
+/* BỘ CHỌN BẮT BUỘC SECTION 10: Attribute Selector ([lang="vi"])
+   - Bắt chính xác thuộc tính ngữ nghĩa ngôn ngữ tiếng Việt để in nghiêng văn bản chuẩn Web Typography */
+.page-about .about-members blockquote[lang="vi"] {
+  font-style: italic;
+}
+
+/* Đoạn văn bên trong trích dẫn: In nghiêng, bán đậm, màu nâu tím đậm */
+.page-about .about-members blockquote p {
+  margin: 0;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+/* Dòng dịch tiếng Anh: Kích thước chữ nhỏ hơn, màu chữ dịu */
+.page-about .about-quote-en {
+  margin: var(--space-1) 0 0 0;
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
+/* Thẻ <cite> ghi nguồn gốc tục ngữ: In nghiêng theo chuẩn trích dẫn tài liệu */
+.page-about .about-quote-en cite {
+  font-style: italic;
+}
+
+/* 4. group photo */
+/* Thẻ <figure> bọc ảnh nhóm (R33, R36): Sử dụng mã màu Hex trực tiếp #fff0f5 và #ffc9d7 theo đúng Rubric */
+.page-about .about-figure {
+  margin: var(--space-3) 0;
+  padding: var(--space-3);
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  max-width: 48rem;
+}
+
+/* Thẻ <img> ảnh nhóm: Responsive 100% chiều ngang khung, viền đôi màu đỏ rượu #751d3a */
+.page-about .about-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid #751d3a;
+  border-radius: var(--radius);
+}
+
+/* Chú thích ảnh <figcaption>: Màu chữ xám tím, kích thước chữ nhỏ gọn */
+.page-about .about-figure figcaption {
+  margin-top: var(--space-2);
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+}
+
+/* 5. fun fact table */
+/* Bảng dữ liệu Fun Facts (R34, R37): Chiếm trọn bề ngang, gộp viền (border-collapse), nền màu kem hồng #fff8fa */
+.page-about .about-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff8fa;
+}
+
+/* Thẻ <caption> tiêu đề bảng: In đậm, căn trái, dùng mã màu Hex trực tiếp #751d3a */
+.page-about .about-table caption {
+  padding-bottom: var(--space-2);
+  font-weight: 700;
+  text-align: left;
+  color: #751d3a;
+}
+
+/* Các ô tiêu đề <th> và ô dữ liệu <td>: Padding đệm êm, kẻ viền 1px màu hồng #ffc9d7 */
+.page-about .about-table th,
+.page-about .about-table td {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid #ffc9d7;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* hàng tiêu đề màu đỏ rượu #751d3a giống hiring timeline */
+/* Thỏa mãn R37: thead th có nền đỏ rượu #751d3a và chữ trắng kem tương phản cao */
+.page-about .about-table thead th {
+  background-color: #751d3a;
+  color: #fff8fa;
+}
+
+/* cột tiêu đề tên members */
+/* Cột đầu tiên mỗi hàng (th scope="row"): Nền hồng kem #fff0f5, chữ đỏ rượu in đậm */
+.page-about .about-table tbody th {
+  background-color: #fff0f5;
+  color: #751d3a;
+  font-weight: 700;
+}
+`
+/* dòng sọc kẽ */
+/* Pseudo-class :nth-child(even): Tạo hiệu ứng sọc ngựa vằn (Zebra striping) cho các hàng chẵn */
+.page-about .about-table tbody tr:nth-child(even) td {
+  background-color: #fff0f5;
+}
+
+/* effect hover) */
+/* Pseudo-class :hover: Hiệu ứng đổi màu nền sáng #ffe9ef khi rê chuột qua hàng bảng.
+   - BẮT BUỘC ĐẶT SAU LUẬT ZEBRA STRIPING để quy tắc Cascade cho phép hover ghi đè lên màu sọc chẵn. */
+.page-about .about-table tbody tr:hover th,
+.page-about .about-table tbody tr:hover td {
+  background-color: #ffe9ef;
+}
+
+/* ==========================================================================
+   SECTION 11 - RESPONSIVE MEDIA QUERIES (Sprint 2)
+   EMPTY IN SPRINT 1 ON PURPOSE
+   ========================================================================== */
+
+/* ==========================================================================
+   SECTION 12 - ACCESSIBILITY AND PRINT EXTRAS (owner: Vinh)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto; transition: none; animation: none; }
+}
+@media print {
+  .site-nav, .skip-link, .home-search { display:none; }
+  body { color: #000; background: #fff; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; }
+}
+
+/* Focus styles: ensure keyboard users can see what's focused (contrast checked in the contract). */
+:focus { outline: 3px solid var(--color-focus); outline-offset: 2px; }

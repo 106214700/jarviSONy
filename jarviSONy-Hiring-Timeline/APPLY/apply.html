@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apply | Pedapigogy</title>
+  <meta name="description" content="Apply for a job at Pedapigogy using our online application form.">
+  <meta name="keywords" content="Pedapigogy, EdTech, accessible education, careers, web developer jobs">
+  <meta name="author" content="jarviSONy: Bui The Vinh, Nguyen Khoa Nguyen, Pham Tran Quoc Dung, Bui Minh Quan">
+  <link rel="stylesheet" href="../styles.css">
+  <!-- EMBEDDED CSS EXAMPLE (contract A10): example text inside the hints uses the code font. -->
+  <style>
+    .page-apply .apply-hint code {
+      font-family: var(--font-mono);
+    }
+  </style>
+</head>
+
+<body class="page-apply">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-logo" href="../index.html">
+        <img src="../images/logo.svg" alt="Pedapigogy logo: a cute student pig" width="48" height="48">
+        <span class="site-logo__name">Pedapigogy</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul class="site-nav__list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../jobs.html">Jobs</a></li>
+          <li><a href="../apply.html" aria-current="page">Apply</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <h1>Apply now</h1>
+      <p class="apply-intro">Fill in every field marked with <span aria-hidden="true">*</span><span
+          class="visually-hidden">an asterisk</span>. Use the reference number from the Jobs page:
+        <strong>LL101</strong> or <strong>LL102</strong>. We use your details only to process your application.
+      </p>
+
+      <!-- FORM: method=post to the URL in the brief. There is NO novalidate, so the browser validates.
+           Every text, email and tel input has a placeholder: Section 9 needs it to avoid red fields on page load.
+           Layout uses CSS Grid (styles.css Section 9). -->
+      <form class="apply-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+
+        <!-- GROUP 1: which job the applicant wants -->
+        <fieldset class="apply-fieldset">
+          <legend>The job</legend>
+          <div class="apply-grid">
+            <div class="apply-field">
+              <label class="apply-label apply-label--required" for="job-ref">Job reference number</label>
+              <input type="text" id="job-ref" name="job_ref" required pattern="[A-Za-z0-9]{5}" minlength="5"
+                maxlength="5" placeholder="LL101" autocomplete="off"
+                title="Exactly 5 letters or digits, for example LL101" aria-describedby="job-ref-hint">
+              <p class="apply-hint" id="job-ref-hint">Exactly 5 letters or digits, for example <code>LL101</code>.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- GROUP 2: personal details. Gender is a nested fieldset because the radios answer one question. -->
+        <fieldset class="apply-fieldset">
+          <legend>About you</legend>
+          <div class="apply-grid">
+            <div class="apply-field">
+              <label class="apply-label apply-label--required" for="first-name">First name</label>
+              <input type="text" id="first-name" name="first_name" required pattern="[A-Za-z]{1,20}" maxlength="20"
+                autocomplete="given-name" placeholder="Dung" title="Letters only, up to 20"
+                aria-describedby="first-name-hint">
+              <p class="apply-hint" id="first-name-hint">Letters only, up to 20 (no accents or spaces).</p>
+            </div>
+            <div class="apply-field">
+              <label class="apply-label apply-label--required" for="last-name">Last name</label>
+              <input type="text" id="last-name" name="last_name" required pattern="[A-Za-z]{1,20}" maxlength="20"
+                autocomplete="family-name" placeholder="Pham" title="Letters only, up to 20"
+                aria-describedby="last-name-hint">
+              <p class="apply-hint" id="last-name-hint">Letters only, up to 20 (no accents or spaces).</p>
+            </div>
+            <!-- DOB: type="text" + pattern, not type="date", so the value is always dd/mm/yyyy (contract D11). -->
+            <div class="apply-field apply-field--wide">
+              <label class="apply-label apply-label--required" for="dob">Date of birth</label>
+              <input type="text" id="dob" name="dob" required
+                pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}" minlength="10" maxlength="10"
+                autocomplete="bday" placeholder="dd/mm/yyyy"
+                title="Date in the format dd/mm/yyyy, for example 25/12/2000" aria-describedby="dob-hint">
+              <p class="apply-hint" id="dob-hint">Format: <code>dd/mm/yyyy</code>, for example 25/12/2000.</p>
+            </div>
+            <!-- Only the first radio has required: that is enough for the whole group. -->
+            <fieldset class="apply-fieldset apply-field--wide">
+              <legend class="apply-label apply-label--required">Gender</legend>
+              <div class="apply-choices">
+                <label class="apply-choice"><input type="radio" name="gender" value="female" required> Female</label>
+                <label class="apply-choice"><input type="radio" name="gender" value="male"> Male</label>
+                <label class="apply-choice"><input type="radio" name="gender" value="non-binary"> Non-binary</label>
+                <label class="apply-choice"><input type="radio" name="gender" value="not-stated"> Prefer not to
+                  say</label>
+              </div>
+            </fieldset>
+          </div>
+        </fieldset>
+
+        <!-- GROUP 3: address -->
+        <fieldset class="apply-fieldset">
+          <legend>Your address</legend>
+          <div class="apply-grid">
+            <div class="apply-field apply-field--wide">
+              <label class="apply-label apply-label--required" for="street">Street address</label>
+              <input type="text" id="street" name="street" required maxlength="40" autocomplete="address-line1"
+                placeholder="12 Burwood Road" title="Up to 40 characters" aria-describedby="street-hint">
+              <p class="apply-hint" id="street-hint">Up to 40 characters.</p>
+            </div>
+            <div class="apply-field">
+              <label class="apply-label apply-label--required" for="suburb">Suburb or town</label>
+              <input type="text" id="suburb" name="suburb" required maxlength="40" autocomplete="address-level2"
+                placeholder="Hawthorn" title="Up to 40 characters" aria-describedby="suburb-hint">
+              <p class="apply-hint" id="suburb-hint">Up to 40 characters.</p>
+            </div>
+            <!-- STATE: placeholder option is disabled + selected with an empty value, so 'required' rejects it. -->
+            <div class="apply-field">
+              <label class="apply-label apply-label--required" for="state">State</label>
+              <select id="state" name="state" required autocomplete="address-level1">
+                <option value="" disabled selected>Select a state</option>
+                <option value="VIC">VIC</option>
+                <option value="NSW">NSW</option>
+                <option value="QLD">QLD</option>
+                <option value="NT">NT</option>
+                <option value="WA">WA</option>
+                <option value="SA">SA</option>
+                <option value="TAS">TAS</option>
+                <option value="ACT">ACT</option>
+              </select>
+            </div>
+            <!-- INLINE CSS EXAMPLE (contract A10): a postcode is only 4 digits, so the box is narrower. -->
+            <div class="apply-field">
+              <label class="apply-label apply-label--required" for="postcode">Postcode</label>
+              <input type="text" id="postcode" name="postcode" required pattern="[0-9]{4}" minlength="4" maxlength="4"
+                inputmode="numeric" autocomplete="postal-code" placeholder="3122" title="Exactly 4 digits"
+                style="max-width: 8rem;" aria-describedby="postcode-hint">
+              <p class="apply-hint" id="postcode-hint">Exactly 4 digits.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- GROUP 4: contact details -->
+        <fieldset class="apply-fieldset">
+          <legend>How we reach you</legend>
+          <div class="apply-grid">
+            <div class="apply-field">
+              <label class="apply-label apply-label--required" for="email">Email</label>
+              <input type="email" id="email" name="email" required pattern="[^@\s]+@[^@\s]+\.[A-Za-z]{2,}"
+                maxlength="254" autocomplete="email" placeholder="name@example.com"
+                title="A valid email address, for example name@example.com" aria-describedby="email-hint">
+              <p class="apply-hint" id="email-hint">For example <code>name@example.com</code>.</p>
+            </div>
+            <div class="apply-field">
+              <label class="apply-label apply-label--required" for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" required pattern="[0-9]{8,12}" minlength="8" maxlength="12"
+                inputmode="numeric" autocomplete="tel" placeholder="0412345678" title="8 to 12 digits, no spaces"
+                aria-describedby="phone-hint">
+              <p class="apply-hint" id="phone-hint">8 to 12 digits, no spaces or symbols.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- GROUP 5: skills. HTML has no 'at least one' rule for checkboxes, so these are NOT required (contract D10).
+             Labels match jobs.html exactly (contract A9.2). -->
+        <fieldset class="apply-fieldset">
+          <legend>Your skills</legend>
+          <fieldset class="apply-fieldset">
+            <legend>Tick every skill you have</legend>
+            <div class="apply-choices">
+              <label class="apply-choice"><input type="checkbox" name="skills[]" value="html"><span>HTML5 and semantic
+                  markup</span></label>
+              <label class="apply-choice"><input type="checkbox" name="skills[]" value="css"><span>CSS3 layout (Flexbox
+                  and Grid)</span></label>
+              <label class="apply-choice"><input type="checkbox" name="skills[]"
+                  value="accessibility"><span>Accessibility (WCAG 2.2)</span></label>
+              <label class="apply-choice"><input type="checkbox" name="skills[]" value="responsive"><span>Responsive
+                  design</span></label>
+              <label class="apply-choice"><input type="checkbox" name="skills[]" value="git"><span>Git and
+                  GitHub</span></label>
+              <label class="apply-choice"><input type="checkbox" name="skills[]" value="wireframing"><span>Wireframing
+                  and prototyping</span></label>
+              <label class="apply-choice"><input type="checkbox" name="skills[]" value="research"><span>User research
+                  and usability testing</span></label>
+              <label class="apply-choice"><input type="checkbox" name="skills[]" value="writing"><span>Clear written
+                  communication</span></label>
+            </div>
+          </fieldset>
+          <!-- The only optional field in the form (the brief: all fields except the textarea are required). -->
+          <div class="apply-field">
+            <label class="apply-label" for="other-skills">Other skills (optional)</label>
+            <textarea id="other-skills" name="other_skills" rows="5"></textarea>
+          </div>
+        </fieldset>
+
+        <div class="apply-actions">
+          <button class="btn" type="submit">Submit application</button>
+          <button class="btn" type="reset">Clear form</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <ul class="site-footer__links">
+        <li><a
+            href="https://cos10026appliedwebproject.atlassian.net/jira/software/projects/SCRUM/boards/1?filter=&groupBy=none&atlOrigin=eyJpIjoiNzZkMzRmMWUzNTUzNDNhNjg2OTAyM2YwNDQ5OTMxZjEiLCJwIjoiaiJ9"
+            target="_blank" rel="noopener noreferrer">Jira project (opens in a new tab)</a></li>
+        <li><a href="https://github.com/106214700/jarviSONy" target="_blank" rel="noopener noreferrer">GitHub repository
+            (opens in a new tab)</a></li>
+        <li><a href="mailto:info@pedapigogy.com">info@pedapigogy.com</a></li>
+      </ul>
+      <p class="site-footer__respect">Pedapigogy encourages applications from Aboriginal and Torres Strait Islander
+        peoples.</p>
+      <p class="site-footer__copy">&copy; 2026 Pedapigogy. Student project for COS10026, group jarviSONy. Fictional
+        company.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

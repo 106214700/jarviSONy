@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Pedapigogy logo: a cute student pig">
+  <!-- Soft pink rounded background -->
+  <rect width="48" height="48" rx="12" fill="#F8A5C2"/>
+  
+  <!-- Pig head -->
+  <circle cx="24" cy="26" r="14" fill="#FFB6C1"/>
+  
+  <!-- Ears -->
+  <ellipse cx="14" cy="16" rx="5" ry="7" fill="#FF8FAB" transform="rotate(-20 14 16)"/>
+  <ellipse cx="34" cy="16" rx="5" ry="7" fill="#FF8FAB" transform="rotate(20 34 16)"/>
+  <!-- Inner ears -->
+  <ellipse cx="14" cy="16" rx="2.5" ry="4" fill="#FFD1DC" transform="rotate(-20 14 16)"/>
+  <ellipse cx="34" cy="16" rx="2.5" ry="4" fill="#FFD1DC" transform="rotate(20 34 16)"/>
+  
+  <!-- Snout -->
+  <ellipse cx="24" cy="30" rx="7" ry="5" fill="#FF8FAB"/>
+  <!-- Nostrils -->
+  <circle cx="21.5" cy="30" r="1.3" fill="#E06B8A"/>
+  <circle cx="26.5" cy="30" r="1.3" fill="#E06B8A"/>
+  
+  <!-- Eyes -->
+  <circle cx="18" cy="24" r="2.2" fill="#2D2A3E"/>
+  <circle cx="30" cy="24" r="2.2" fill="#2D2A3E"/>
+  <!-- Eye shine -->
+  <circle cx="17.3" cy="23.3" r="0.7" fill="#FFFFFF"/>
+  <circle cx="29.3" cy="23.3" r="0.7" fill="#FFFFFF"/>
+  
+  <!-- Cute glasses -->
+  <circle cx="18" cy="24" r="4" fill="none" stroke="#5C4B8A" stroke-width="1.4"/>
+  <circle cx="30" cy="24" r="4" fill="none" stroke="#5C4B8A" stroke-width="1.4"/>
+  <line x1="22" y1="24" x2="26" y2="24" stroke="#5C4B8A" stroke-width="1.4"/>
+  
+  <!-- Tiny graduation cap (student vibe) -->
+  <rect x="16" y="8" width="16" height="3" rx="0.5" fill="#5C4B8A"/>
+  <polygon points="24,5 12,9 36,9" fill="#5C4B8A"/>
+  <line x1="32" y1="9" x2="34" y2="14" stroke="#F2B134" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="34" cy="14.5" r="1.5" fill="#F2B134"/>
+</svg>
