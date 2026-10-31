@@ -15,7 +15,7 @@
   --color-surface: #F4F6FB;
   --color-primary: #3D3BA6;
   --color-primary-dark: #2A2878;
-  --color-header: #D34F76;
+  --color-header: #C33E68;
   --color-teal: #0E7C7B;
   --color-accent: #F2B134;
   --color-accent-soft: #FFE6AD;
@@ -213,7 +213,6 @@ a[target="_blank"]::after { content: " \2197"; }
    SECTION 8 - PAGE: JOBS (owner: Nguyen)
    ========================================================================== */
 
-.page-jobs,
 .page-home,
 .page-apply {
   --color-ink: #4f2634;
@@ -221,6 +220,26 @@ a[target="_blank"]::after { content: " \2197"; }
   --color-bg: #fff8fa;
   --color-surface: #fff0f5;
   --color-primary: #fc809f;
+  --color-primary-dark: #751d3a;
+  --color-teal: #751d3a;
+  --color-accent: #fc809f;
+  --color-accent-soft: #ffc9d7;
+  --color-border: #ffc9d7;
+  --color-error: #b3261e;
+  --color-focus: #751d3a;
+  --color-hero-start: #ffe9ef;
+  --color-hero-end: #ffe9ef;
+  --color-hero-dot: #ffc9d7;
+  --color-stripe: #fff0f5;
+  --color-hover: #ffe9ef;
+}
+
+.page-jobs {
+  --color-ink: #4f2634;
+  --color-ink-soft: #765461;
+  --color-bg: #fff8fa;
+  --color-surface: #fff0f5;
+  --color-primary: #751d3a;
   --color-primary-dark: #751d3a;
   --color-teal: #751d3a;
   --color-accent: #fc809f;

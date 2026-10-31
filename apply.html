@@ -224,6 +224,14 @@
         company.</p>
     </div>
   </footer>
+  <script>
+    const jobReference = new URLSearchParams(window.location.search).get("job");
+    const jobReferenceInput = document.getElementById("job-ref");
+
+    if (/^LL10[1-4]$/.test(jobReference || "") && jobReferenceInput) {
+      jobReferenceInput.value = jobReference;
+    }
+  </script>
 </body>
 
 </html>
