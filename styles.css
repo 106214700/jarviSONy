@@ -26,9 +26,11 @@
   --color-hero-dot: #D5D8F2;
   --color-stripe: #EEF1FA;
   --color-hover: #FFF1CC;
-  --color-action: #A3254F;
+  --color-header: #C8446C;
+  --color-action: #B02A56;
+  /* darker pink for links and buttons: 5.5:1 or better on the pale pink pages */
   --color-error-bg: #FDECEA;
-  --color-success: #1B6E3A;
+  --color-success: #1B6E3C;
 
   /* Spacing scale */
   --space-1: 0.25rem;
@@ -144,8 +146,9 @@ a[target="_blank"]::after {
    SECTION 4 - HEADER AND NAV (shared, owned by Vinh)
    ========================================================================== */
 .site-header {
-  background: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-header);
+  border-bottom: 1px solid var(--color-primary-dark);
+  color: #fff;
 }
 
 .site-header__inner {
@@ -167,6 +170,11 @@ a[target="_blank"]::after {
   font-weight: 700;
 }
 
+.site-header a:hover,
+.site-header a:focus {
+  background-color: transparent;
+}
+
 .site-nav__list {
   list-style: none;
   display: flex;
@@ -176,13 +184,17 @@ a[target="_blank"]::after {
 }
 
 .site-nav__list a {
-  color: var(--color-primary-dark);
+  color: inherit;
+  text-decoration: none;
   padding-bottom: .25rem;
 }
 
+.site-header :focus {
+  outline-color: #fff;
+}
+
 .site-nav__list a[aria-current="page"] {
-  border-bottom: 3px solid var(--color-primary-dark);
-  font-weight: 700;
+  border-bottom: 3px solid #fff;
 }
 
 /* Skip link: visible on focus for keyboard users */
@@ -193,7 +205,6 @@ a[target="_blank"]::after {
   width: 1px;
   height: 1px;
   overflow: hidden;
-  color: var(--color-primary-dark);
 }
 
 .skip-link:focus {
@@ -240,12 +251,12 @@ a[target="_blank"]::after {
    ========================================================================== */
 .btn {
   background: var(--color-action);
+  text-decoration: none;
   color: var(--color-bg);
   border: none;
   padding: .5rem .75rem;
   border-radius: .375rem;
   cursor: pointer;
-  text-decoration: none;
 }
 
 .btn:hover,
@@ -647,7 +658,7 @@ a[target="_blank"]::after {
 
 /* Highlight the field being used. */
 .page-apply .apply-field:focus-within .apply-label {
-  color: var(--color-primary);
+  color: var(--color-action);
 }
 
 /* Error styling only after the user has typed something (placeholder gone).
@@ -895,8 +906,53 @@ a[target="_blank"]::after {
 
 /* ==========================================================================
    SECTION 11 - RESPONSIVE MEDIA QUERIES (Sprint 2)
-   EMPTY IN SPRINT 1 ON PURPOSE
    ========================================================================== */
+@media (max-width: 48rem) {
+  .page-home .home-hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header__inner,
+  .site-nav__list,
+  .site-footer__links,
+  .page-home .home-search {
+    flex-wrap: wrap;
+  }
+
+  .page-home .home-search input[type="search"] {
+    flex: 1 1 12rem;
+    min-width: 0;
+  }
+}
+
+/* Phone: tighter spacing and smaller headings */
+@media (max-width: 34rem) {
+  h1 {
+    font-size: var(--text-2xl);
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+  }
+
+  .site-header__inner {
+    padding: var(--space-2) 0;
+  }
+
+  .site-nav__list {
+    gap: var(--space-2);
+  }
+
+  .site-footer__links {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .page-about .about-members,
+  .page-about .about-figure {
+    padding: var(--space-3);
+  }
+}
 
 /* ==========================================================================
    SECTION 12 - ACCESSIBILITY AND PRINT EXTRAS (owner: Vinh)
