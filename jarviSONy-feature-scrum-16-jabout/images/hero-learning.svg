@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="Illustration of a laptop showing a lesson, with a cute student pig studying">
+  <!-- Soft cream background -->
+  <rect width="600" height="400" fill="#FFF5F8"/>
+  
+  <!-- Decorative soft circles -->
+  <circle cx="80" cy="60" r="40" fill="#FFE0EC" opacity="0.6"/>
+  <circle cx="520" cy="80" r="50" fill="#FFD1DC" opacity="0.5"/>
+  <circle cx="480" cy="320" r="35" fill="#FFE6F0" opacity="0.7"/>
+  
+  <!-- Laptop base -->
+  <path d="M100 340 H500 L480 362 H120 Z" fill="#E88AAF"/>
+  
+  <!-- Laptop body -->
+  <rect x="140" y="160" width="320" height="180" rx="16" fill="#FF8FAB"/>
+  
+  <!-- Screen -->
+  <rect x="158" y="178" width="284" height="144" rx="8" fill="#FFF0F5"/>
+  
+  <!-- Screen content - cute lesson bars -->
+  <rect x="176" y="196" width="130" height="16" rx="8" fill="#FF6B9D"/>
+  <rect x="176" y="224" width="250" height="12" rx="6" fill="#FFB6C1"/>
+  <rect x="176" y="248" width="220" height="12" rx="6" fill="#FFB6C1"/>
+  <rect x="176" y="272" width="180" height="12" rx="6" fill="#FFB6C1"/>
+  
+  <!-- Checkmark circle -->
+  <circle cx="400" cy="290" r="20" fill="#7EC8A3"/>
+  <path d="M390 290 L397 297 L412 280" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Cute little pig peeking from behind laptop -->
+  <circle cx="480" cy="200" r="28" fill="#FFB6C1"/>
+  <!-- Pig ears -->
+  <ellipse cx="462" cy="180" rx="8" ry="12" fill="#FF8FAB" transform="rotate(-25 462 180)"/>
+  <ellipse cx="498" cy="180" rx="8" ry="12" fill="#FF8FAB" transform="rotate(25 498 180)"/>
+  <!-- Snout -->
+  <ellipse cx="480" cy="210" rx="12" ry="8" fill="#FF8FAB"/>
+  <circle cx="475" cy="210" r="2" fill="#E06B8A"/>
+  <circle cx="485" cy="210" r="2" fill="#E06B8A"/>
+  <!-- Eyes -->
+  <circle cx="470" cy="196" r="3.5" fill="#2D2A3E"/>
+  <circle cx="490" cy="196" r="3.5" fill="#2D2A3E"/>
+  <circle cx="469" cy="195" r="1.2" fill="#FFFFFF"/>
+  <circle cx="489" cy="195" r="1.2" fill="#FFFFFF"/>
+  
+  <!-- Small book floating -->
+  <rect x="70" y="200" width="40" height="50" rx="3" fill="#FF6B9D"/>
+  <rect x="74" y="204" width="32" height="4" rx="1" fill="#FFE0EC"/>
+  <rect x="74" y="214" width="28" height="3" rx="1" fill="#FFE0EC"/>
+  <rect x="74" y="222" width="24" height="3" rx="1" fill="#FFE0EC"/>
+</svg>
