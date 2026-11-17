@@ -1,0 +1,8 @@
+# editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# never commit
+*.log
+*.zip
