@@ -571,8 +571,10 @@ a[target="_blank"]::after {
 
 /* ==========================================================================
    SECTION 9 - PAGE: APPLY (owner: Dung)
-   Selector focus: attribute selectors, :invalid, :valid, :checked,
-   :focus-within, ::placeholder, :not().
+   Selector focus: attribute selectors, :checked, :focus-within, ::placeholder.
+   Part 2: the :invalid / :valid rules were removed (the form has no HTML
+   validation any more, so they never matched). Server error list and
+   confirmation styles are at the end of this section.
    Layout: CSS Grid (fluid, no media queries needed).
    ========================================================================== */
 .page-apply .apply-intro {
@@ -662,18 +664,6 @@ a[target="_blank"]::after {
   color: var(--color-action);
 }
 
-/* Error styling only after the user has typed something (placeholder gone).
-   RULE: every text input MUST have a placeholder attribute, otherwise
-   :placeholder-shown never matches and the field looks invalid on page load. */
-.page-apply input:not(:placeholder-shown):invalid {
-  border-color: var(--color-error);
-  background-color: var(--color-error-bg);
-}
-
-.page-apply input:not(:placeholder-shown):valid {
-  border-color: var(--color-success);
-}
-
 /* Radios and checkboxes: large click area, wrapped in their label. */
 .page-apply .apply-choices {
   display: flex;
@@ -703,6 +693,47 @@ a[target="_blank"]::after {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
+}
+
+/* ---------- Part 2: process_eoi.php results ----------
+   The boxes themselves use .msg / .msg--error / .msg--success from Section 13. */
+.page-apply .apply-errors h1,
+.page-apply .apply-confirm h1 {
+  margin-top: 0;
+  font-size: var(--text-xl);
+}
+
+.page-apply .apply-errors li {
+  margin-bottom: var(--space-1);
+}
+
+.page-apply .apply-confirm__number {
+  font-size: var(--text-lg);
+}
+
+/* The EOInumber in large text so the applicant can note it down. */
+.page-apply .apply-confirm__number strong {
+  display: inline-block;
+  margin-left: var(--space-2);
+  font-size: var(--text-3xl);
+  color: var(--color-primary-dark);
+}
+
+/* Summary: label and value side by side; long emails wrap on phones. */
+.page-apply .apply-confirm__summary {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-1) var(--space-4);
+  max-width: 40rem;
+}
+
+.page-apply .apply-confirm__summary dt {
+  font-weight: 700;
+}
+
+.page-apply .apply-confirm__summary dd {
+  margin: 0;
+  overflow-wrap: anywhere;
 }
 
 /* ==========================================================================
